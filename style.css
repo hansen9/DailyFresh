@@ -95,30 +95,6 @@ div.disc-label h1 {
 }
 
 /* Categories section*/
-div.categories_header {
-  text-align: center;
-}
-
-span.categories {
-  font-size: 3rem;
-}
-
-div.categories_item {
-  float: left;
-}
-
-div.vegetables_category {
-  float: left;
-  border-radius: 5%;
-  border-style: groove;
-}
-
-div.fruits_category {
-  float: left;
-  border-radius: 5%;
-  border-style: groove;
-}
-
 div.category {
   border-radius: 2%;
   background-color: rgb(255, 255, 255);
