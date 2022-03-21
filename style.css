@@ -1,117 +1,146 @@
 /* Navbar */
-nav.navbar{
-    position: relative;
-    z-index: 999999;
+body {
+  background-color: rgb(243, 239, 239);
+}
+nav.navbar {
+  position: relative;
+  z-index: 999999;
 }
 
 /* Hero Section */
-section.jumbotron{
-    margin-top: -100px;
+section.jumbotron {
+  margin-top: -100px;
 }
-section.jumbotron img{
-    width: 100%;
-}
-
-section.jumbotron .center h1{
-    white-space: nowrap;
-    font-weight: 100;
-    color: white;
-    font-size: 11rem;
-    text-shadow: 0 0 15px black;
+section.jumbotron img {
+  width: 100%;
 }
 
-section.jumbotron .center span{
-    font-weight: 500;
+section.jumbotron .center h1 {
+  white-space: nowrap;
+  font-weight: 100;
+  color: white;
+  font-size: 11rem;
+  text-shadow: 0 0 15px black;
+}
+
+section.jumbotron .center span {
+  font-weight: 500;
 }
 
 /* Carousel Section */
 div#carouselI.carousel.slide div.carousel-indicators button {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
 }
 
 div#carouselI.carousel.slide div.carousel-indicators button.active {
-    background-color: #368E12;
+  background-color: #368e12;
 }
 
-div.carousel-desc{
-    height: 500px;
-    width: 500px;
-    background-color: #368E12;
+div.carousel-desc {
+  height: 500px;
+  width: 500px;
+  background-color: #368e12;
 }
 
-div.carousel-text{
-    color:white;
-    text-shadow: 0 0 20px black;
-    letter-spacing: 0.1rem;
+div.carousel-text {
+  color: white;
+  text-shadow: 0 0 20px black;
+  letter-spacing: 0.1rem;
 }
 
-span.desc-title h1{
-    font-size: 3.8rem;
-    white-space: nowrap;
-    font-weight: 700;
+span.desc-title h1 {
+  font-size: 3.8rem;
+  white-space: nowrap;
+  font-weight: 700;
 }
 
-span.desc-item h1{
-    font-size: 3rem;
-    font-weight: 100;
-    margin-top: 5%;
-    margin-bottom: 10%;
+span.desc-item h1 {
+  font-size: 3rem;
+  font-weight: 100;
+  margin-top: 5%;
+  margin-bottom: 10%;
 }
 
-span.desc-price-before h1{
-    font-size: 1.5rem;
-    white-space: nowrap;
-    font-weight: 100;
-    text-decoration: line-through;
-    text-decoration-color: red;
-    text-decoration-thickness: 0.1rem;
+span.desc-price-before h1 {
+  font-size: 1.5rem;
+  white-space: nowrap;
+  font-weight: 100;
+  text-decoration: line-through;
+  text-decoration-color: red;
+  text-decoration-thickness: 0.1rem;
 }
 
-span.desc-price-after h1{
-    font-size: 5rem;
-    white-space: nowrap;
-    font-weight: 500;
+span.desc-price-after h1 {
+  font-size: 5rem;
+  white-space: nowrap;
+  font-weight: 500;
 }
 
-div.disc-label{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgb(180, 7, 7);
-    margin-right: -1.5vw;
-    transform: rotate(-25deg);
-    z-index: 1;
+div.disc-label {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(180, 7, 7);
+  margin-right: -2.5vw;
+  transform: rotate(-25deg);
+  z-index: 1;
 }
 
-div.disc-label h1{
-    vertical-align: middle;
-    margin-top: 25%;
-    color: white;
+div.disc-label h1 {
+  vertical-align: middle;
+  margin-top: 25%;
+  color: white;
 }
 
 /* Categories section*/
-div.categories_header{
-    text-align: center;
+div.categories_header {
+  text-align: center;
 }
 
-span.categories{
-    font-size: 3rem;
+span.categories {
+  font-size: 3rem;
 }
 
-div.categories_item{
-    float: left;
+div.categories_item {
+  float: left;
 }
 
-div.vegetables_category{
-    float: left;
-    border-radius: 5%;
-    border-style: groove;
+div.vegetables_category {
+  float: left;
+  border-radius: 5%;
+  border-style: groove;
 }
 
-div.fruits_category{
-    float: left;
-    border-radius: 5%;
-    border-style: groove;
+div.fruits_category {
+  float: left;
+  border-radius: 5%;
+  border-style: groove;
+}
+
+div.category {
+  border-radius: 2%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 15px black;
+}
+
+section.categories {
+  margin-top: 50px;
+  text-align: center;
+}
+
+div.row h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+div.category-image {
+  padding-top: 100px;
+  height: 300px;
+}
+
+div.category h1 {
+  margin-top: 25px;
+  padding-bottom: 50px;
 }
