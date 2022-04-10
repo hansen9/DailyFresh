@@ -95,7 +95,7 @@ export default {
   height: 225px;
 } */
 svg{
-  background-image: url('@/assets/pngegg (5).png');
+  background-image: url('@/assets/carrot.png');
   background-size: 265px;
   background-repeat: no-repeat;
   background-position: center;
