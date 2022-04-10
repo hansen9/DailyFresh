@@ -1,12 +1,14 @@
 <template>
-  <HelloWorld msg="yahahaha di troll"/>
+    <div id="center">
+        <HelloWorld msg="lieur guys"/>
+    </div>
 </template>
 
 <script>
 import HelloWorld from '../components/HelloWorld.vue'
 
 export default {
-  name: 'HomePage',
+  name: 'ProfilePage',
   components: {
     HelloWorld,
   }
@@ -14,4 +16,7 @@ export default {
 </script>
 
 <style>
+    #center{
+        text-align: center;
+    }
 </style>
