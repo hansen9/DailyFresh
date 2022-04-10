@@ -55,8 +55,19 @@ export default {
   #address{
     border: 1px solid black;
   }
+  #address > textarea {
+    text-align: center;
+  }
   textarea{
-    margin-left: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    /* align: center; */
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
   #userInfo{
     display: flex;
@@ -82,9 +93,20 @@ export default {
     margin-bottom: 20px;
     margin-left: 20px;
   }
+  #pesan_btn{
+    width: 157px;
+    height: 77px;
+    font-size: 35px;
+  }
   h6,#pesan_btn{
     margin-top: 10px;
     float:right;
+  }
+  button{
+    border: none;
+    background-color: #368E12;
+    color: azure;
+    border-radius: 10px;
   }
   p,h5,h4,h3{
     margin-bottom: 0px;

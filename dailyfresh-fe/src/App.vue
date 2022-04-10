@@ -1,12 +1,19 @@
 <template>
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <div id="nav">
-    <router-link to="/">Home</router-link> | 
-    <router-link to="/Products">Products</router-link>
+  <div id="app">
+    <NavBar />
   </div>
   <router-view/>
 </template>
+<script>
+import NavBar from './components/NavBar.vue'
 
+export default {
+  name: 'app',
+  components: {
+    NavBar
+  }
+}
+</script>
 
 <style>
 #app {
@@ -15,7 +22,7 @@
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 #nav{
   text-align: center;
