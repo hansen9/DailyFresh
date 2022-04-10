@@ -1,7 +1,9 @@
 <template>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <div id="navbar">
-    <img src="@/assets/DailyFresh2_white.png" alt="Daily Fresh" id="daily-fresh">
+    <router-link to="/">
+        <img src="@/assets/DailyFresh2_white.png" alt="Daily Fresh" id="daily-fresh">
+    </router-link>
     <div id="searchbox">
         <div class="row height">
             <div class="col-md">
