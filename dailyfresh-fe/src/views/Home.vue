@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld msg="yahahaha di troll"/>
+  <HelloWorld msg="Home Page"/>
 </template>
 
 <script>
