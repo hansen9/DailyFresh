@@ -1,5 +1,4 @@
 <template>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <div id="navbar">
     <router-link to="/">
         <img src="@/assets/DailyFresh2_white.png" alt="Daily Fresh" id="daily-fresh">
@@ -12,11 +11,15 @@
         </div>
     </div>
     
-    <!-- <router-link id="link" to="/">Home</router-link> |
-    <router-link id="link" to="/Products">Products</router-link> -->
-    <router-link id="user-profile" to="/Profile">
-        <img src="@/assets/user-logo-48.png" alt="user-logo">
-    </router-link>
+    <div>
+        <router-link to="/Checkout" class="user-profile" id="col3">
+            <i class="bi bi-cart"></i>
+        </router-link>
+        <router-link class="user-profile" to="/Profile">
+            <i class="bi bi-person-circle"></i>
+        </router-link>
+    </div>
+    
   </div>
 </template>
 <script>
@@ -58,13 +61,14 @@
     display: grid;
     grid-template-columns: 30% 50% 20%;
 }
-#user-profile{
+.user-profile{
     padding-top: 20px;
-    /* margin: 10px; */
+    margin: 10px;
+    font-size: 3.5rem;
+    color: white;
 }
-#user-profile img{
-    /* padding: -40px; */
-    border-radius: 50%;
+#col3{
+    border-right: 1px solid white;
 }
 #daily-fresh{
     margin-left: 50px;
