@@ -1,6 +1,6 @@
 <template>
     <div id="center">
-        <HelloWorld msg="lieur guys"/>
+        <HelloWorld msg="Profile Page"/>
     </div>
 </template>
 
