@@ -12,7 +12,7 @@
     </div>
     
     <div>
-        <router-link to="/Checkout" class="user-profile" id="col3">
+        <router-link to="/Cart" class="user-profile" id="col3">
             <i class="bi bi-cart"></i>
         </router-link>
         <router-link class="user-profile" to="/Profile">
