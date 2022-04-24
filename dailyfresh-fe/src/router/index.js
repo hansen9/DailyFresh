@@ -5,6 +5,7 @@ import Checkout from '../views/Checkout.vue'
 import Cart from '../views/CartView.vue'
 import DetailProduct from '../views/DetailProduct.vue'
 import Profile from '../views/Profile.vue'
+import AddProduct from '@/views/AddProduct.vue'
 
 
 const routes = [
@@ -29,7 +30,7 @@ const routes = [
         component: Cart,
     },
     {
-        path: '/Detail-Product',
+        path: '/Detail_Product',
         name: 'DetailProduct',
         component: DetailProduct,
     },
@@ -37,6 +38,11 @@ const routes = [
         path: '/Profile',
         name: 'Profile',
         component: Profile,
+    },
+    {
+        path: '/Add_Product',
+        name: 'Add Product',
+        component: AddProduct,
     }
 ];
 
