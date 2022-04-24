@@ -6,7 +6,10 @@
     <div id="searchbox">
         <div class="row height">
             <div class="col-md">
-                <div class="form"> <i class="fa fa-search"></i> <input type="text" class="form-control form-input" placeholder="Search anything..."></div>
+                <form class="form" @submit="toProducts"> 
+                    <i class="fa fa-search"></i> 
+                    <input type="text" class="form-control form-input" placeholder="Search anything...">
+                </form>
             </div>
         </div>
     </div>
@@ -23,7 +26,14 @@
   </div>
 </template>
 <script>
-
+export default {
+    methods: {
+        toProducts(){
+            this.$router.push('/Products')
+            // $router.push('/Products')
+        }
+    }
+}
 </script>
 
 <style>
@@ -60,6 +70,7 @@
     height: 125px;
     display: grid;
     grid-template-columns: 30% 50% 20%;
+    z-index: 9999999999;
 }
 .user-profile{
     padding-top: 20px;

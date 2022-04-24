@@ -1,5 +1,5 @@
 <template>
-  <NavBar />
+  <!-- <NavBar /> -->
 
   <!-- Hero -->
   <section class="jumbotron position-relative">
@@ -122,12 +122,12 @@
 </template>
 
 <script>
-import NavBar from "../components/NavBarHome.vue";
+// import NavBar from "../components/NavBarHome.vue";
 
 export default {
   name: "HomePage",
   components: {
-    NavBar,
+    // NavBar,
   },
 };
 </script>
@@ -136,7 +136,7 @@ export default {
 <style scoped>
 /* Hero Section */
 section.jumbotron {
-  margin-top: -115px;
+  /* margin-top: -115px; */
 }
 section.jumbotron img {
   width: 100%;
