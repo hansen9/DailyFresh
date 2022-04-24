@@ -1,6 +1,5 @@
 <template>
   <NavBarHome />
-
   <!-- Hero -->
   <section class="jumbotron position-relative">
     <img src="../assets/edamame.jpg" />
@@ -136,7 +135,7 @@ export default {
 <style scoped>
 /* Hero Section */
 section.jumbotron {
-  margin-top: -115px;
+  /* margin-top: -115px; */
 }
 section.jumbotron img {
   width: 100%;

@@ -35,7 +35,7 @@
                     <h3>Subtotal <span>harga</span></h3>
                 </div>
                 <div class="col col-lg-2">
-                    <button class="btn btn-success btn-lg">Checkout</button>
+                    <button class="btn btn-success btn-lg" @click="$router.push('/Checkout')">Checkout</button>
                 </div>
             </div>
         </div>
