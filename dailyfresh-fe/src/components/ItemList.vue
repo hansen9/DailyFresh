@@ -68,7 +68,7 @@ export default {
   name: 'ItemList',
   methods: {
     goToCart(){
-      this.$router.push('/Checkout')
+      this.$router.push('/Cart')
     }
   }
 }
