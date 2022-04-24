@@ -1,6 +1,5 @@
 <template>
-  <!-- <NavBar /> -->
-
+  <NavBarHome />
   <!-- Hero -->
   <section class="jumbotron position-relative">
     <img src="../assets/edamame.jpg" />
@@ -122,12 +121,12 @@
 </template>
 
 <script>
-// import NavBar from "../components/NavBarHome.vue";
+import NavBarHome from "../components/NavBarHome.vue";
 
 export default {
   name: "HomePage",
   components: {
-    // NavBar,
+    NavBarHome,
   },
 };
 </script>
