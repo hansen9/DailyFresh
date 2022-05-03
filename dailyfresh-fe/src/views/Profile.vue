@@ -1,22 +1,26 @@
 <template>
-    <div id="center">
-        <HelloWorld msg="Profile Page"/>
-    </div>
+  <div id="center">
+    <HelloWorld msg="Profile Page" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld.vue'
+import HelloWorld from "../components/HelloWorld.vue";
 
 export default {
-  name: 'ProfilePage',
+  name: "ProfilePage",
   components: {
     HelloWorld,
-  }
-}
+  },
+};
 </script>
 
 <style>
-    #center{
-        text-align: center;
-    }
+#center {
+  text-align: center;
+}
+
+html {
+  min-height: 120vh;
+}
 </style>

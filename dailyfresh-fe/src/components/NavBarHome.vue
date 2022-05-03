@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <a class="d-flex align-items-center" href="/">
+    <router-link to="/" class="a d-flex align-items-center">
       <img src="../assets/DailyFresh2_white.png" alt="Daily Fresh Logo" />
-    </a>
+    </router-link>
     <ul :class="{ side: active }" class="nav">
       <div class="li-container d-flex justify-content-between align-items-center">
         <li class="nav-item left-items d-flex align-items-center">
@@ -15,15 +15,19 @@
         </li>
         <li class="nav-item right-items d-flex">
           <div class="d-flex align-items-center justify-content-between buttons">
-            <div class="cartbutton">
-              <i class="bi bi-cart2"></i>
-              <span class="cart"></span>
-            </div>
+            <router-link to="/cart">
+              <div class="cartbutton">
+                <i class="bi bi-cart2"></i>
+                <span class="cart"></span>
+              </div>
+            </router-link>
             <div class="separator"></div>
-            <div class="profilebutton">
-              <i class="bi bi-person-circle"></i>
-              <span class="profile"></span>
-            </div>
+            <router-link to="/profile">
+              <div class="profilebutton">
+                <i class="bi bi-person-circle"></i>
+                <span class="profile"></span>
+              </div>
+            </router-link>
           </div>
         </li>
       </div>
@@ -65,9 +69,10 @@ nav {
   height: 17%;
   display: flex;
   justify-content: space-between;
+  /* background-color: black; */
 }
 
-a img {
+.a img {
   height: 80%;
   margin-top: -4%;
 }
@@ -214,6 +219,11 @@ div.buttons {
 
   ul.nav.side {
     transform: translateX(0);
+  }
+
+  div.buttons a {
+    width: 100%;
+    text-decoration: none;
   }
 
   ul.nav li {

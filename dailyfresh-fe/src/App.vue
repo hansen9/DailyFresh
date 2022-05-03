@@ -1,5 +1,6 @@
 <template>
   <div id="app" v-if="currentURL != '/'">
+    <h1>{{ currentURL }}</h1>
     <NavBar />
   </div>
   <router-view />
