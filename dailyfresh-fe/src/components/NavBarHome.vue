@@ -28,7 +28,7 @@
         </li>
       </div>
     </ul>
-    <div class="button-container">
+    <div :class="{ clicked: active }" class="button-container">
       <div class="expand-button" @click="isActive">
         <i :class="{ clicked: active }" class="bi bi-list"></i>
       </div>
@@ -176,15 +176,20 @@ div.buttons {
   div.expand-button i {
     transition: all 0.15s;
     cursor: pointer;
+    border-radius: 8px;
   }
 
   div.expand-button i:active,
   div.expand-button i.clicked:active {
     transform: scale(0.75);
+    outline: solid;
+    outline-width: 8px;
   }
 
   div.expand-button i.clicked {
     transform: scale(0.9);
+    outline: solid;
+    outline-width: 4px;
   }
 
   ul.nav {
@@ -192,7 +197,7 @@ div.buttons {
     position: fixed;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 60%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(15px);
