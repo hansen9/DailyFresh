@@ -33,7 +33,8 @@
                                 <input type="number" class="form-control" min="0"/>
                             </div>
                         </form>
-                        <p>Stock: 50</p>
+                        <br>
+                        <p>Stock: <span>50</span></p>
                     </div>
                     <!-- Button action -->
                     <div class="button_action_customer">
@@ -129,7 +130,7 @@ img.alt_picture{
 
 /* Product information */
 div.information_product{
-    padding-top: 6rem;
+    padding-top: 4rem;
 }
 
 span.rate{
