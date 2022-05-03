@@ -1,75 +1,48 @@
 <template>
   <NavBarHome />
   <!-- Hero -->
-  <section class="jumbotron position-relative">
-    <img src="../assets/edamame.jpg" />
-    <div class="center position-absolute top-50 start-50 translate-middle">
-      <h1>
-        Your <span>Fresh<br />Daily</span> Needs
-      </h1>
+  <section class="hero d-flex align-items-center justify-content-center">
+    <div class="tagline-container d-flex">
+      <div class="tagline">Your <span>Fresh</span></div>
+      <div class="tagline"><span>Daily</span> Needs</div>
     </div>
   </section>
   <!-- Hero End -->
 
   <!-- Carousel -->
-  <section class="carousel">
-    <div class="container">
-      <div id="carouselI" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselI" data-bs-slide-to="0" class="active mx-2" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselI" data-bs-slide-to="1" aria-label="Slide 2" class="mx-2"></button>
-          <button type="button" data-bs-target="#carouselI" data-bs-slide-to="2" aria-label="Slide 3" class="mx-2"></button>
+  <section class="carousel d-flex flex-column">
+    <h1>Top Picks</h1>
+    <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="item1-desc d-flex flex-column align-items-center justify-content-evenly position-relative">
+            <span>Mr. Green Apple</span>
+            <span>Rp50.000,-</span>
+            <div class="disc-label d-flex justify-content-center align-items-center position-absolute">-50%</div>
+          </div>
+          <div class="item1"></div>
         </div>
-        <div class="carousel-inner position-relative">
-          <div class="carousel-item active">
-            <div class="carousel-desc position-relative">
-              <div class="carousel-text position-absolute top-50 start-50 translate-middle text-center">
-                <span class="desc-title"><h1>LIMITED SALE!!</h1></span>
-                <span class="desc-item"><h1>Apel Zeus</h1></span>
-                <span class="desc-price-before"><h1>Rp80.000,-</h1></span>
-                <span class="desc-price-after"><h1>Rp40.000,-</h1></span>
-              </div>
-              <div class="disc-label position-absolute top-50 end-0 text-center">
-                <h1>-50%</h1>
-              </div>
-            </div>
-            <div class="right-item position-absolute top-0 end-0">
-              <img src="../assets/apel-zeus_converted.jpg" class="d-block" alt="Apel Zeus" />
-            </div>
+        <div class="carousel-item">
+          <div class="item2-desc d-flex flex-column align-items-center justify-content-evenly position-relative">
+            <span class="item2-desc-title">Buah Pohon Kebenaran</span>
+            <span>Rp50.000,-</span>
+            <div class="disc-label d-flex justify-content-center align-items-center position-absolute">-50%</div>
           </div>
-          <div class="carousel-item">
-            <div class="carousel-desc position-relative">
-              <div class="carousel-text position-absolute top-50 start-50 translate-middle text-center">
-                <span class="desc-title"><h1>LIMITED SALE!!</h1></span>
-                <span class="desc-item"><h1>All Meat Plus Ultra</h1></span>
-                <span class="desc-price-before"><h1>Rp80.000,-</h1></span>
-                <span class="desc-price-after"><h1>Rp40.000,-</h1></span>
-              </div>
-              <div class="disc-label position-absolute top-50 end-0 text-center">
-                <h1>-50%</h1>
-              </div>
-            </div>
-            <div class="right-item position-absolute top-0 end-0">
-              <img src="../assets/perdagingan_converted.jpg" class="d-block" alt="Perdagingan" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="carousel-desc position-relative">
-              <div class="carousel-text position-absolute top-50 start-50 translate-middle text-center">
-                <span class="desc-title"><h1>LIMITED SALE!!</h1></span>
-                <span class="desc-item"><h1>Buah-Buahan</h1></span>
-                <span class="desc-price-before"><h1>Rp80.000,-</h1></span>
-                <span class="desc-price-after"><h1>Rp40.000,-</h1></span>
-              </div>
-              <div class="disc-label position-absolute top-50 end-0 text-center">
-                <h1>-50%</h1>
-              </div>
-            </div>
-            <div class="right-item position-absolute top-0 end-0">
-              <img src="../assets/perbuahan_converted.jpg" class="d-block" alt="Perbuahan" />
-            </div>
-          </div>
+          <div class="item2"></div>
         </div>
+        <div class="carousel-item">
+          <div class="item3-desc d-flex flex-column align-items-center justify-content-evenly position-relative">
+            <span>All <span class="text-decoration-line"> Might</span> Meat</span>
+            <span>Rp50.000,-</span>
+            <div class="disc-label d-flex justify-content-center align-items-center position-absolute">-50%</div>
+          </div>
+          <div class="item3"></div>
+        </div>
+      </div>
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
     </div>
   </section>
@@ -81,43 +54,53 @@
       <div class="row">
         <h1>Categories</h1>
       </div>
-      <div class="row">
-        <div class="col-lg-3">
-          <div class="category">
-            <div class="category-image">
-              <img src="../assets/Vegetables_Thumbnail.png" width="300" />
-            </div>
-            <h1>Vegetables</h1>
+      <div class="row category-items justify-content-center">
+        <div class="col-lg-3 col-5">
+          <div class="category d-flex flex-column justify-content-end align-items-center">
+            <img src="../assets/Vegetables_Thumbnail.png" width="90%" />
+            <h2 class="mt-4">Veggies</h2>
           </div>
         </div>
-        <div class="col-lg-3">
-          <div class="category">
-            <div class="category-image">
-              <img src="../assets/Fruits_Thumbnail.png" width="300" />
-            </div>
-            <h1>Fruits</h1>
+        <div class="col-lg-3 col-5">
+          <div class="category d-flex flex-column justify-content-end align-items-center">
+            <img src="../assets/Fruits_Thumbnail.png" width="90%" />
+            <h2 class="mt-4">Fruits</h2>
           </div>
         </div>
-        <div class="col-lg-3">
-          <div class="category">
-            <div class="category-image">
-              <img src="../assets/Meat_Thumbnail.png" width="300" />
-            </div>
-            <h1>Meat</h1>
+        <div class="col-lg-3 col-5">
+          <div class="category d-flex flex-column justify-content-end align-items-center">
+            <img src="../assets/Meat_Thumbnail.png" width="90%" />
+            <h2 class="mt-4">Meat</h2>
           </div>
         </div>
-        <div class="col-lg-3">
-          <div class="category">
-            <div class="category-image">
-              <img src="../assets/Spices_Thumbnail.png" width="300" />
-            </div>
-            <h1>Spices</h1>
+        <div class="col-lg-3 col-5">
+          <div class="category d-flex flex-column justify-content-end align-items-center">
+            <img src="../assets/Spices_Thumbnail.png" width="90%" />
+            <h2 class="mt-4">Spices</h2>
           </div>
         </div>
       </div>
     </div>
   </section>
   <!-- Categories End -->
+
+  <!-- List Store -->
+  <section class="list-store position-relative d-flex flex-column justify-content-center align-items-center">
+    <img class="tomato position-absolute" src="../assets/tomato.png" alt="tomato" />
+    <img class="broccoli position-absolute" src="../assets/broccoli.png" alt="broccoli" />
+    <img class="carrot position-absolute" src="../assets/carrot.png" alt="carrot" />
+    <h1>Are you a <span class="font-color-green">seller?</span></h1>
+    <h4>List your own store with <b>Daily Fresh!</b></h4>
+    <img class="df-logo" src="../assets/DailyFreshLogo.png" alt="DailyFresh Logo" />
+    <div class="join-button d-flex justify-content-center align-items-center"><b>Join Now</b></div>
+  </section>
+  <!-- List Store End -->
+
+  <!-- Footer -->
+  <footer>
+    <div></div>
+  </footer>
+  <!-- Footer End -->
 </template>
 
 <script>
@@ -134,119 +117,242 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 /* Hero Section */
-section.jumbotron {
-  /* margin-top: -115px; */
-}
-section.jumbotron img {
+section.hero {
   width: 100%;
+  height: 100vh;
+  background-image: url(../assets/edamame.jpg);
+  background-size: cover;
 }
 
-section.jumbotron .center h1 {
-  white-space: nowrap;
-  font-weight: 100;
-  color: white;
+div.tagline-container {
+  flex-direction: column;
   font-size: 10vw;
-  text-shadow: 0 0 15px black;
 }
 
-section.jumbotron .center span {
-  font-weight: 500;
+div.tagline {
+  color: #ffffff;
+  text-align: center;
+  line-height: 120%;
+  font-weight: 400;
+  text-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+div.tagline span {
+  color: #ff8400;
+  font-family: "Kaushan Script", cursive;
 }
 
 /* Carousel Section */
 section.carousel {
-  background-color: white;
-}
-div#carouselI.carousel.slide div.carousel-indicators button {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
+  padding: 0 10%;
 }
 
-div#carouselI.carousel.slide div.carousel-indicators button.active {
-  background-color: #0d8a22;
-}
-
-div.carousel-desc {
-  height: 500px;
-  width: 500px;
-  background-color: #0d8a22;
-}
-
-div.carousel-text {
-  color: white;
-  text-shadow: 0 0 20px black;
-  letter-spacing: 0.1rem;
-}
-
-span.desc-title h1 {
-  font-size: 3.8rem;
-  white-space: nowrap;
-  font-weight: 700;
-}
-
-span.desc-item h1 {
-  font-size: 3rem;
-  font-weight: 100;
-  margin-top: 5%;
-  margin-bottom: 10%;
-}
-
-span.desc-price-before h1 {
-  font-size: 1.5rem;
-  white-space: nowrap;
-  font-weight: 100;
-  text-decoration: line-through;
-  text-decoration-color: red;
-  text-decoration-thickness: 0.1rem;
-}
-
-span.desc-price-after h1 {
-  font-size: 5rem;
-  white-space: nowrap;
-  font-weight: 500;
-}
-
-div.disc-label {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: rgb(211, 15, 15);
-  margin-right: -2.5vw;
-  transform: rotate(-25deg);
-  z-index: 1;
-}
-
-div.disc-label h1 {
-  vertical-align: middle;
-  margin-top: 25%;
-  color: white;
-}
-
-/* Categories section*/
-div.category {
-  border-radius: 2%;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.627);
-}
-
-section.categories {
-  margin-top: 50px;
+section.carousel h1 {
+  padding: 2% 0 1%;
   text-align: center;
 }
 
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: flex;
+}
+
+.item1-desc,
+.item2-desc,
+.item3-desc {
+  background-color: black;
+  width: 30%;
+  padding: 5% 0;
+  color: white;
+  font-size: 2.5vw;
+  text-align: center;
+}
+
+.text-decoration-line {
+  text-decoration-line: line-through;
+  text-decoration-color: rgb(179, 0, 0);
+  text-decoration-thickness: 5px;
+}
+
+div.disc-label {
+  width: 70px;
+  height: 70px;
+  font-size: 23px;
+  border-radius: 50%;
+  right: 0;
+  background-color: rgb(211, 15, 15);
+  transform: translate(50%, 50%) rotate(-25deg);
+  z-index: 1;
+}
+
+.item1,
+.item2,
+.item3 {
+  height: 70vh;
+  width: 70%;
+  background-image: url(../assets/apel-zeus_converted.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item2 {
+  background-image: url(../assets/perbuahan_converted.jpg);
+}
+
+.item3 {
+  background-image: url(../assets/perdagingan_converted.jpg);
+}
+
+div.carousel-indicators button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 0 10px;
+  border: none;
+  box-shadow: 0 0 5px black;
+}
+
+div.carousel-indicators button.active {
+  background-color: rgb(13, 138, 34);
+}
+
+/* Categories section*/
+section.categories {
+  text-align: center;
+  padding: 3% 5%;
+  background-color: #ffffff;
+}
+
+div.category {
+  border-radius: 5%;
+  border: solid 1px rgb(199, 199, 199);
+  padding: 10% 0;
+  height: 100%;
+  transform: scale(90%);
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+div.category:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.627);
+  transform: scale(100%);
+}
+
+div.category h2 {
+}
+
 div.row h1 {
-  font-size: 3rem;
-  margin-bottom: 50px;
+  padding: 2%;
 }
 
 div.category-image {
-  padding-top: 100px;
-  height: 300px;
+  height: 70%;
 }
 
-div.category h1 {
-  margin-top: 25px;
-  padding-bottom: 50px;
+/* List Store */
+section.list-store {
+  margin-top: 10vh;
+  min-height: 70vh;
+  background-image: url(../assets/leaves.png);
+  text-align: center;
+  color: rgb(4, 12, 27);
+}
+
+.tomato,
+.broccoli,
+.carrot {
+  width: 20%;
+}
+
+.tomato {
+  left: 0;
+  bottom: 0;
+  transform: rotate(20deg) translate(-15%, 35%);
+}
+
+.broccoli {
+  right: 0;
+  bottom: 0;
+  transform: translate(30%, 20%);
+}
+
+.carrot {
+  right: 0;
+  top: 0;
+  transform: rotate(-25deg) translate(35%, -40%);
+}
+
+.font-color-green {
+  color: #198754;
+}
+
+div.join-button {
+  margin-top: 3%;
+  width: 8%;
+  height: 8vh;
+  border: 1px solid rgb(13, 138, 34);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+div.join-button:hover {
+  background-color: rgb(13, 138, 34);
+  color: white;
+}
+
+.df-logo {
+  width: 10%;
+}
+
+/* Footer */
+footer div {
+  width: 100%;
+  min-height: 35vh;
+  background-color: black;
+}
+
+@media (max-width: 1200px) {
+  /* Hero */
+  section.carousel {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Carousel */
+  .carousel-item.active,
+  .carousel-item-next,
+  .carousel-item-prev {
+    flex-direction: column;
+  }
+
+  .item1-desc,
+  .item2-desc,
+  .item3-desc {
+    width: 100%;
+    height: 20%;
+    position: absolute !important;
+    background-color: rgba(0, 0, 0, 0.896);
+  }
+
+  div.disc-label {
+    right: 10%;
+  }
+
+  .item1,
+  .item2,
+  .item3 {
+    height: 50vh;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Hero */
+  section.hero {
+    height: 50vh;
+  }
 }
 </style>
