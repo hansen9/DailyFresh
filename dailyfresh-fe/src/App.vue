@@ -1,30 +1,38 @@
 <template>
-  <div id="app">
+  <div id="app" v-if="currentURL != '/'">
     <NavBar />
   </div>
-  <router-view/>
+  <router-view />
 </template>
 <script>
-import NavBar from './components/NavBar.vue'
+import NavBar from "./components/NavBar.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    NavBar
-  }
-}
+    NavBar,
+  },
+  data() {
+    return {
+      currentURL: "",
+    };
+  },
+  created() {
+    this.currentURL = window.location.pathname;
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
-  color: #2c3e50;
+  color: #198754;
   /* margin-top: 60px; */
 }
-#nav{
+#nav {
   text-align: center;
 }
 </style>

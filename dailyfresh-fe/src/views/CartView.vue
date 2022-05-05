@@ -1,6 +1,6 @@
 <template>
     <!-- Header Cart -->
-        <div class="container">
+        <div class="container title_cart">
             <h2>Keranjang</h2>
             <div class="row header_cart">
                 <div class="col col-lg-5">
@@ -60,15 +60,15 @@ div.header_cart{
     padding: 0.5rem;
     background-image: url(../assets/leaves.png);
 }
-
+div.title_cart{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #368e12;
+}
 /* checkout */
 div.checkout_product{
     margin-top: 3rem;
     padding: 1.5rem;
     border-style: groove;
 }
-
-/* div.item_cart{
-    border-style: groove;
-} */
 </style>

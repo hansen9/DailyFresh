@@ -15,8 +15,8 @@
     </div>
     
     <div>
-        <router-link to="/Cart" class="user-profile" id="col3">
-            <i class="bi bi-cart"></i>
+        <router-link to="/Cart" class="cart-button">
+            <i class="bi bi-cart2"></i>
         </router-link>
         <router-link class="user-profile" to="/Profile">
             <i class="bi bi-person-circle"></i>
@@ -40,12 +40,13 @@ export default {
 
 .form {
     position: relative;
-    padding-top: 20px;
+    padding-top: 15px;
+    width: 95%;
 }
 
 .form .fa-search {
     position: absolute;
-    top: 40px;
+    top: 35px;
     left: 20px;
     color: #368E12
 }
@@ -60,22 +61,21 @@ export default {
     box-shadow: none;
     border: none
 }
-<!-- -->
 
 #navbar{
     margin-top: 0px;
     text-align: center;
     background-color: #368E12;
     color: white;
-    height: 125px;
+    width: 100%;
+    height: 20%;
     display: grid;
     grid-template-columns: 30% 50% 20%;
     z-index: 9999999999;
 }
-.user-profile{
-    padding-top: 20px;
-    margin: 10px;
-    font-size: 3.5rem;
+.user-profile, .cart-button{
+    margin: 1rem;
+    font-size: 2.5rem;
     color: white;
 }
 #col3{
@@ -84,8 +84,8 @@ export default {
 }
 #daily-fresh{
     margin-left: 50px;
-    width: 260px;
-    height: 86px;
+    margin-top: 0.5rem;
+    width: 50%;
 }
 #link{
     color: azure;
