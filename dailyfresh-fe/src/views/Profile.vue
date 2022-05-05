@@ -41,7 +41,7 @@ import MyOrders from '../components/MyOrders.vue'
 import ProfileInfo from '../components/ProfileInfo.vue'
 
 export default {
-  name: 'ProfilePage',
+  name: "ProfilePage",
   components: {
     MyOrders,
     ProfileInfo

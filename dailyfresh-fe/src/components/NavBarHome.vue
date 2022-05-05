@@ -1,39 +1,88 @@
 <template>
-  <nav>
-    <a class="d-flex align-items-center" href="/">
-      <img src="../assets/DailyFresh2_white.png" alt="Daily Fresh Logo" />
-    </a>
-    <ul :class="{ side: active }" class="nav">
-      <div class="li-container d-flex justify-content-between align-items-center">
-        <li class="nav-item left-items d-flex align-items-center">
-          <div class="search position-relative">
-            <div class="searchbutton position-absolute">
-              <i class="bi bi-search"></i>
+  <!-- <h1>{{ $offset }}</h1> -->
+  <div v-if="currentRoute == 'Home'" v-show="currentRoute != 'Login'">
+    <nav class="home">
+      <router-link to="/" class="a d-flex align-items-center">
+        <img src="../assets/DailyFresh2_white.png" alt="Daily Fresh Logo" />
+      </router-link>
+      <ul :class="{ side: active }" class="nav">
+        <div class="li-container d-flex justify-content-between align-items-center">
+          <li class="nav-item left-items d-flex align-items-center">
+            <div class="search position-relative">
+              <div class="searchbutton position-absolute">
+                <i class="bi bi-search"></i>
+              </div>
+              <input type="search" placeholder="search items" />
             </div>
-            <input type="search" placeholder="search items" />
-          </div>
-        </li>
-        <li class="nav-item right-items d-flex">
-          <div class="d-flex align-items-center justify-content-between buttons">
-            <div class="cartbutton">
-              <i class="bi bi-cart2"></i>
-              <span class="cart"></span>
+          </li>
+          <li class="nav-item right-items d-flex">
+            <div class="d-flex align-items-center justify-content-between buttons">
+              <router-link to="/cart">
+                <div class="cartbutton">
+                  <i class="bi bi-cart2"></i>
+                  <span class="cart"></span>
+                </div>
+              </router-link>
+              <div class="separator"></div>
+              <router-link to="/profile">
+                <div class="profilebutton">
+                  <i class="bi bi-person-circle"></i>
+                  <span class="profile"></span>
+                </div>
+              </router-link>
             </div>
-            <div class="separator"></div>
-            <div class="profilebutton">
-              <i class="bi bi-person-circle"></i>
-              <span class="profile"></span>
-            </div>
-          </div>
-        </li>
+          </li>
+        </div>
+      </ul>
+      <div :class="{ clicked: active }" class="button-container">
+        <div class="expand-button" @click="isActive">
+          <i :class="{ clicked: active }" class="bi bi-list"></i>
+        </div>
       </div>
-    </ul>
-    <div :class="{ clicked: active }" class="button-container">
-      <div class="expand-button" @click="isActive">
-        <i :class="{ clicked: active }" class="bi bi-list"></i>
+    </nav>
+  </div>
+
+  <div :style="{ 'margin-top': offset + 'px' }" v-else v-show="currentRoute != 'Login'">
+    <nav>
+      <router-link to="/" class="a d-flex align-items-center">
+        <img src="../assets/DailyFresh2_white.png" alt="Daily Fresh Logo" />
+      </router-link>
+      <ul :class="{ side: active }" class="nav">
+        <div class="li-container d-flex justify-content-between align-items-center">
+          <li class="nav-item left-items d-flex align-items-center">
+            <div class="search position-relative">
+              <div class="searchbutton position-absolute">
+                <i class="bi bi-search"></i>
+              </div>
+              <input type="search" placeholder="search items" />
+            </div>
+          </li>
+          <li class="nav-item right-items d-flex">
+            <div class="d-flex align-items-center justify-content-between buttons">
+              <router-link to="/cart">
+                <div class="cartbutton">
+                  <i class="bi bi-cart2"></i>
+                  <span class="cart"></span>
+                </div>
+              </router-link>
+              <div class="separator"></div>
+              <router-link to="/profile">
+                <div class="profilebutton">
+                  <i class="bi bi-person-circle"></i>
+                  <span class="profile"></span>
+                </div>
+              </router-link>
+            </div>
+          </li>
+        </div>
+      </ul>
+      <div :class="{ clicked: active }" class="button-container">
+        <div class="expand-button" @click="isActive">
+          <i :class="{ clicked: active }" class="bi bi-list"></i>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -42,6 +91,7 @@ export default {
   data() {
     return {
       active: false,
+      offset: 0,
     };
   },
   methods: {
@@ -49,25 +99,36 @@ export default {
       this.active = !this.active;
     },
   },
+  computed: {
+    currentRoute() {
+      return this.$route.name;
+    },
+  },
+  mounted() {
+    this.offset = document.getElementsByTagName("nav")[0].clientHeight;
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-body {
-  overflow-x: hidden;
-}
 nav {
   padding: 1vw 8%;
   position: absolute;
+  top: 0;
   z-index: 1;
   width: 100%;
-  height: 17%;
+  height: 15%;
   display: flex;
   justify-content: space-between;
+  background-color: #198754;
 }
 
-a img {
+nav.home {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.a img {
   height: 80%;
   margin-top: -4%;
 }
@@ -98,7 +159,7 @@ div.searchbutton,
 div.cartbutton,
 div.profilebutton {
   font-size: 2.9em;
-  color: #0d8a22;
+  color: #757575;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
 }
@@ -110,10 +171,13 @@ div.searchbutton {
   cursor: pointer;
 }
 
-div.searchbutton:hover,
+div.searchbutton:hover {
+  color: #198754;
+}
+
 div.cartbutton:hover,
 div.profilebutton:hover {
-  color: #0d8a22;
+  color: rgb(172, 172, 172);
 }
 
 div.cartbutton,
@@ -214,6 +278,11 @@ div.buttons {
 
   ul.nav.side {
     transform: translateX(0);
+  }
+
+  div.buttons a {
+    width: 100%;
+    text-decoration: none;
   }
 
   ul.nav li {

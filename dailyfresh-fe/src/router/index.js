@@ -9,6 +9,7 @@ import AddProduct from '@/views/AddProduct.vue'
 import Seller from '../views/SellerMenu.vue'
 import ListProduct from '../views/ListProduct.vue'
 import EditProduct from '../views/EditProduct.vue'
+import Login from "../views/Login.vue";
 
 
 const routes = [
@@ -61,12 +62,17 @@ const routes = [
         path: '/Edit_product',
         name: 'Edit Product',
         component: EditProduct,
-    }
+    },
+    {
+      path: "/Login",
+      name: "Login",
+      component: Login,
+    },
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes: routes,
-    // linkActiveClass: 'active',
+  history: createWebHistory(),
+  routes: routes,
+  // linkActiveClass: 'active',
 });
-export default router
+export default router;
