@@ -1,25 +1,14 @@
 <template>
-  <div id="app" v-if="currentURL != '/'">
-    <h1>{{ currentURL }}</h1>
-    <NavBar />
-  </div>
+  <NavBar />
   <router-view />
 </template>
 <script>
-import NavBar from "./components/NavBar.vue";
+import NavBar from "./components/NavBarHome.vue";
 
 export default {
   name: "app",
   components: {
     NavBar,
-  },
-  data() {
-    return {
-      currentURL: "",
-    };
-  },
-  created() {
-    this.currentURL = window.location.pathname;
   },
 };
 </script>
@@ -31,9 +20,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #198754;
-  /* margin-top: 60px; */
 }
 #nav {
   text-align: center;
+}
+html,
+body {
+  overflow-x: hidden;
 }
 </style>

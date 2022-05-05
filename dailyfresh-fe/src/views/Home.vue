@@ -1,5 +1,4 @@
 <template>
-  <NavBarHome />
   <!-- Hero -->
   <section class="hero d-flex align-items-center justify-content-center">
     <div class="tagline-container d-flex">
@@ -104,13 +103,8 @@
 </template>
 
 <script>
-import NavBarHome from "../components/NavBarHome.vue";
-
 export default {
   name: "HomePage",
-  components: {
-    NavBarHome,
-  },
 };
 </script>
 
@@ -161,7 +155,7 @@ section.carousel h1 {
 .item1-desc,
 .item2-desc,
 .item3-desc {
-  background-color: black;
+  background-color: #198754;
   width: 30%;
   padding: 5% 0;
   color: white;
@@ -214,7 +208,7 @@ div.carousel-indicators button {
 }
 
 div.carousel-indicators button.active {
-  background-color: rgb(13, 138, 34);
+  background-color: #198754;
 }
 
 /* Categories section*/
@@ -237,9 +231,6 @@ div.category {
 div.category:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.627);
   transform: scale(100%);
-}
-
-div.category h2 {
 }
 
 div.row h1 {
@@ -291,14 +282,14 @@ div.join-button {
   margin-top: 3%;
   width: 8%;
   height: 8vh;
-  border: 1px solid rgb(13, 138, 34);
+  border: 1px solid #198754;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
 
 div.join-button:hover {
-  background-color: rgb(13, 138, 34);
+  background-color: #198754;
   color: white;
 }
 

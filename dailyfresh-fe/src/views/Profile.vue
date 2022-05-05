@@ -19,8 +19,4 @@ export default {
 #center {
   text-align: center;
 }
-
-html {
-  min-height: 120vh;
-}
 </style>
