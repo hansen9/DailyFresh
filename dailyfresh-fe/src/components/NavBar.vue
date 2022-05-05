@@ -65,7 +65,7 @@ export default {
 #navbar{
     margin-top: 0px;
     text-align: center;
-    background-color: #368E12;
+    background-color: #198754;
     color: white;
     width: 100%;
     height: 20%;
@@ -78,7 +78,10 @@ export default {
     font-size: 2.5rem;
     color: white;
 }
-
+#col3{
+    padding-right: 20px;
+    border-right: 1px solid white;
+}
 #daily-fresh{
     margin-left: 50px;
     margin-top: 0.5rem;
