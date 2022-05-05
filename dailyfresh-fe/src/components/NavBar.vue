@@ -79,6 +79,7 @@ export default {
     color: white;
 }
 #col3{
+    padding-right: 20px;
     border-right: 1px solid white;
 }
 #daily-fresh{
