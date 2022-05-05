@@ -15,7 +15,6 @@
       </div>
     </form>
     
-    
     <table>
       <tr>
         <th>Produk</th>
@@ -23,13 +22,22 @@
         <th>Kuantitas</th>
         <th>Total Harga</th>
       </tr>
+      <tr v-for="(item) in 4" :key="item">
+        <td>
+          <img src="@/assets/Vegetables_Thumbnail.png" class="rounded float-start product_picture" alt="product daily fresh">
+          <p>Nama barang</p>
+        </td>
+        <td>Rp16000</td>
+        <td>1</td>
+        <td>Rp16000</td>
+      </tr>
     </table>
 
     <div id="payment_method">
       <h5>Metode Pembayaran</h5>
       <button>Cash on Delivery</button>
       <button>Bank Transfer</button>
-      <h6>Subtotal : </h6>
+      <h6>Subtotal : RP64000</h6>
     </div>
 
     <button id="pesan_btn">PESAN</button>
@@ -55,16 +63,11 @@ export default {
   #address{
     border: 1px solid black;
   }
-  #address > textarea {
-    text-align: center;
-  }
   textarea{
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
-    /* align: center; */
-
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -77,7 +80,7 @@ export default {
   }
   
   table{
-    border: 1px solid black;
+    border-collapse: collapse;
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -94,9 +97,9 @@ export default {
     margin-left: 20px;
   }
   #pesan_btn{
-    width: 157px;
-    height: 77px;
-    font-size: 35px;
+    width: 120px;
+    height: 60px;
+    font-size: 25px;
   }
   h6,#pesan_btn{
     margin-top: 10px;
@@ -108,7 +111,14 @@ export default {
     color: azure;
     border-radius: 10px;
   }
-  p,h5,h4,h3{
-    margin-bottom: 0px;
+  td{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+  }
+  .product_picture{
+    width: 25%;
+    height: 25%;
   }
 </style>
