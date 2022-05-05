@@ -6,6 +6,9 @@ import Cart from '../views/CartView.vue'
 import DetailProduct from '../views/DetailProduct.vue'
 import Profile from '../views/Profile.vue'
 import AddProduct from '@/views/AddProduct.vue'
+import Seller from '../views/SellerMenu.vue'
+import ListProduct from '../views/ListProduct.vue'
+import EditProduct from '../views/EditProduct.vue'
 
 
 const routes = [
@@ -31,7 +34,7 @@ const routes = [
     },
     {
         path: '/Detail_Product',
-        name: 'DetailProduct',
+        name: 'Detail Product',
         component: DetailProduct,
     },
     {
@@ -43,6 +46,21 @@ const routes = [
         path: '/Add_Product',
         name: 'Add Product',
         component: AddProduct,
+    },
+    {
+        path: '/Seller_Menu',
+        name: 'Seller Menu',
+        component: Seller,
+    },
+    {
+        path: '/List_Product',
+        name: 'List Product',
+        component: ListProduct,
+    },
+    {
+        path: '/Edit_product',
+        name: 'Edit Product',
+        component: EditProduct,
     }
 ];
 

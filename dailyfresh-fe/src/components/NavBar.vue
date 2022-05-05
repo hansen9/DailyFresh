@@ -65,7 +65,7 @@ export default {
 #navbar{
     margin-top: 0px;
     text-align: center;
-    background-color: #368E12;
+    background-color: #198754;
     color: white;
     width: 100%;
     height: 20%;
