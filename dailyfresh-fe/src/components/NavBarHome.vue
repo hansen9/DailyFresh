@@ -1,100 +1,286 @@
 <template>
-  <!-- Navbar -->
-  <!-- <nav class="navbar navbar-light py-2">
-    <div class="container-md">
-      <a href="index.html" class="navbar-brand"><img src="../assets/DailyFresh2_white.png" width="240" alt="Daily Fresh Logo" /></a>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </nav> -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid mx-5 py-1">
-      <a class="navbar-brand" href="#"><img src="../assets/DailyFresh2_white.png" width="240" alt="Daily Fresh Logo" /></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-lg-0 position-relative">
-          <li class="nav-item position-absolute">
-            <button class="btn" type="submit">
+  <nav>
+    <a class="d-flex align-items-center" href="/">
+      <img src="../assets/DailyFresh2_white.png" alt="Daily Fresh Logo" />
+    </a>
+    <ul :class="{ side: active }" class="nav">
+      <div class="li-container d-flex justify-content-between align-items-center">
+        <li class="nav-item left-items d-flex align-items-center">
+          <div class="search position-relative">
+            <div class="searchbutton position-absolute">
               <i class="bi bi-search"></i>
-            </button>
-          </li>
-          <li class="nav-item">
-            <input class="form-control me-2" type="search" placeholder="search product" aria-label="Search" />
-          </li>
-          <li class="nav-item login">
-            <button class="btn" type="submit">Login</button>
-          </li>
-          <li class="nav-item register">
-            <button class="btn" type="submit">Sign Up</button>
-          </li>
-        </ul>
-        <form class="d-flex"></form>
+            </div>
+            <input type="search" placeholder="search items" />
+          </div>
+        </li>
+        <li class="nav-item right-items d-flex">
+          <div class="d-flex align-items-center justify-content-between buttons">
+            <div class="cartbutton">
+              <i class="bi bi-cart2"></i>
+              <span class="cart"></span>
+            </div>
+            <div class="separator"></div>
+            <div class="profilebutton">
+              <i class="bi bi-person-circle"></i>
+              <span class="profile"></span>
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+    <div :class="{ clicked: active }" class="button-container">
+      <div class="expand-button" @click="isActive">
+        <i :class="{ clicked: active }" class="bi bi-list"></i>
       </div>
     </div>
   </nav>
-  <!-- Navbar End -->
 </template>
 
 <script>
 export default {
   name: "NavBarHome",
+  data() {
+    return {
+      active: false,
+    };
+  },
+  methods: {
+    isActive: function () {
+      this.active = !this.active;
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-nav.navbar {
-  position: relative;
-  z-index: 999999;
+body {
+  overflow-x: hidden;
+}
+nav {
+  padding: 1vw 8%;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 17%;
+  display: flex;
+  justify-content: space-between;
 }
 
-ul li.nav-item button {
-  padding: 0;
-  border: 0;
-  padding-left: 10px;
-  padding-top: 5px;
-  font-size: 1.2rem;
+a img {
+  height: 80%;
+  margin-top: -4%;
+}
+
+ul.nav {
+  flex-wrap: nowrap;
+  width: 73%;
+}
+
+div.li-container {
+  width: 100%;
+}
+
+li.left-items {
+  width: 70%;
+}
+
+div.search,
+input {
+  width: 100%;
+}
+
+li.right-items {
+  width: 13%;
+}
+
+div.searchbutton,
+div.cartbutton,
+div.profilebutton {
+  font-size: 2.9em;
+  color: #0d8a22;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+div.searchbutton {
+  font-size: 1.3em;
+  left: 10px;
+  top: 15%;
+  cursor: pointer;
+}
+
+div.searchbutton:hover,
+div.cartbutton:hover,
+div.profilebutton:hover {
   color: #0d8a22;
 }
 
-ul li.nav-item input {
-  border: 0;
-  margin: 0;
-  width: 45vw;
-  border-radius: 18px;
-  padding-left: 40px;
+div.cartbutton,
+div.profilebutton {
+  font-size: 2em;
+  color: white;
+}
+
+div.separator {
+  height: 75%;
+  border-right: 2px solid white;
+}
+
+div.search input {
+  padding: 10px 38px;
+  border: none;
+  border-radius: 30px;
+  height: 90%;
   background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.17s ease-in-out;
+}
+div.search input:focus {
+  background-color: rgb(255, 255, 255);
+  outline: none;
 }
 
-div.collapse ul {
-  margin-left: 6vw;
+div.button-container {
+  top: 0;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  display: none;
+  right: 3%;
 }
 
-li.login {
-  border-right: 1px solid rgb(255, 255, 255);
-  margin-left: 5vw;
-  padding-right: 1.5vw;
-}
-
-li.login button.btn {
+div.expand-button {
   color: white;
+  font-size: 2.6em;
+  display: none;
+  margin-top: 2%;
 }
 
-li.register {
-  margin-left: 1.5vw;
+div.buttons {
+  width: 100%;
 }
 
-li.register button.btn {
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 5px;
-  color: white;
-  background-color: #0d8a22;
-  border-radius: 50px;
-  white-space: nowrap;
+@media (max-width: 1200px) {
+  nav {
+    justify-content: center;
+    height: 15%;
+  }
+  div.button-container {
+    display: flex;
+    align-items: center;
+  }
+  div.expand-button {
+    display: flex;
+  }
+
+  div.expand-button i {
+    transition: all 0.15s;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  div.expand-button i:active,
+  div.expand-button i.clicked:active {
+    transform: scale(0.75);
+    outline: solid;
+    outline-width: 8px;
+  }
+
+  div.expand-button i.clicked {
+    transform: scale(0.9);
+    outline: solid;
+    outline-width: 4px;
+  }
+
+  ul.nav {
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    transform: translateX(100%);
+    transition: all 0.65s ease-in-out;
+  }
+
+  div.li-container {
+    flex-direction: column;
+    justify-content: start !important;
+    position: absolute;
+    top: 20%;
+  }
+
+  ul.nav.side {
+    transform: translateX(0);
+  }
+
+  ul.nav li {
+    width: 100%;
+    justify-content: center;
+  }
+
+  li.nav-item {
+    padding: 0 10%;
+  }
+
+  li.right-items {
+    padding: 0;
+    margin-top: 5%;
+  }
+
+  div.separator {
+    display: none;
+  }
+
+  div.cartbutton,
+  div.profilebutton {
+    font-size: 1.8em;
+    padding: 2% 10%;
+    width: 100%;
+  }
+
+  div.cartbutton:hover,
+  div.profilebutton:hover {
+    background-color: rgba(38, 38, 38, 0.8);
+  }
+
+  div.cartbutton i,
+  div.profilebutton i {
+    margin-right: 15px;
+  }
+
+  div.buttons {
+    align-items: flex-start !important;
+    flex-direction: column;
+  }
+
+  .cart::before {
+    content: "Cart";
+  }
+  .profile::before {
+    content: "Profile";
+  }
+}
+
+@media (max-width: 576px) {
+  nav {
+    height: 9%;
+  }
+  div.expand-button {
+    font-size: 1.8em;
+  }
+  ul.nav {
+    width: 70%;
+  }
+  div.cartbutton,
+  div.profilebutton {
+    font-size: 1.5em;
+    margin: 2% 0;
+  }
+  li.right-items {
+    margin-top: 2%;
+  }
 }
 </style>
