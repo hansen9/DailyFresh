@@ -47,7 +47,7 @@
 
 <style>
 div.title_seller_menu{
-    margin-top: 4rem;
+    margin-top: 9rem;
     margin-bottom: 6rem;
     text-align: center;
 }

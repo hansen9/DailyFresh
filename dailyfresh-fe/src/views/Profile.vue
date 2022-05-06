@@ -1,7 +1,7 @@
 <template>
     <div id="content">
       
-      <div id="sidebar">
+      <div id="sidebar" class="sidebar">
         <h5 @click="changeComponent(1)">Account</h5>
         <h5 @click="changeComponent(2)">My Orders</h5>
         <h5 @click="changeComponent(3)">General</h5>
@@ -21,7 +21,7 @@
         
         <div v-if="componentClicked == 3">
           <h1>Notifikasi</h1>
-          <div id="general">
+          <div id="general" class="general">
             <p>status pesanan<i class="bi bi-chevron-right"></i></p>
             <hr>
             <p>promo<i class="bi bi-chevron-right"></i></p>
@@ -74,16 +74,16 @@ export default {
     float: right;
     font-size: 1rem;
   }
-  p{
+  div.general p{
     cursor: pointer;
   }
-  button{
+  /* button{
     border: none;
-  }
+  } */
   .center{
       text-align: center;
   }
-  h5{
+  div.general, div.sidebar h5{
     cursor: pointer;
   }
 </style>
