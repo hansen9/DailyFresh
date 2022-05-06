@@ -1,25 +1,64 @@
 <template>
-  <ItemList/>
+  <div>
+    <!-- <transition-group appear class="grid-wrapper" name="slide-in" tag="div"> -->
+      <div id="categoriesNav">
+        <div class="categories"><img src = "@/assets/Vegetables_Thumbnail.png"/> <p id="item">Sayuran</p></div>
+        <div class="categories"><img src = "@/assets/Spices_Thumbnail.png"/> <p id="item">Bumbu Dapur</p></div>
+        <div class="categories"><img src = "@/assets/Meat_Thumbnail.png"/> <p id="item">Daging</p></div>
+        <div class="categories"><img src = "@/assets/Fruits_Thumbnail.png"/> <p id="item">Buah Buahan</p></div>
+      </div>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div v-for="good in goods.data" :key="good.id">
+              <ItemList :item="good" />
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- </transition-group> -->
+  </div>
 </template>
 
 <script>
 import ItemList from '../components/ItemList.vue'
+import axios from 'axios'
 
 export default {
   name: 'ProductsPage',
+  mounted(){
+    this.fetchData();
+  },
   components: {
     ItemList
+  },
+  data: () => {
+    return{
+      goods: [],
+    };
+  },
+  methods: {
+    async fetchData(){
+      const res = await axios.get("http://localhost:8080/goods");
+      this.goods = res.data;
+    }
   }
 }
 </script>
 
 <style>
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
+#categoriesNav{
+  display: flex;
+}
+.categories:hover{
+  border: 5px solid black;
+}
+.categories{
+  padding: 5px;
+  margin: 5px;
+  width: 150px;
+  height: 59px;
+  border: 1px solid #185CE2;
+  display: flex;
+}
 </style>
