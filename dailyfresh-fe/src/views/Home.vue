@@ -94,12 +94,6 @@
     <div class="join-button d-flex justify-content-center align-items-center"><b>Join Now</b></div>
   </section>
   <!-- List Store End -->
-
-  <!-- Footer -->
-  <footer>
-    <div></div>
-  </footer>
-  <!-- Footer End -->
 </template>
 
 <script>
@@ -138,7 +132,7 @@ div.tagline span {
 
 /* Carousel Section */
 section.carousel {
-  padding: 0 10%;
+  padding: 3% 10% 0;
 }
 
 section.carousel h1 {
@@ -234,7 +228,7 @@ div.category:hover {
 }
 
 div.row h1 {
-  padding: 2%;
+  padding: 2% 0 1%;
 }
 
 div.category-image {
@@ -259,7 +253,7 @@ section.list-store {
 .tomato {
   left: 0;
   bottom: 0;
-  transform: rotate(20deg) translate(-15%, 35%);
+  transform: rotate(20deg) translate(-15%, 25%);
 }
 
 .broccoli {
@@ -295,13 +289,6 @@ div.join-button:hover {
 
 .df-logo {
   width: 10%;
-}
-
-/* Footer */
-footer div {
-  width: 100%;
-  min-height: 35vh;
-  background-color: black;
 }
 
 @media (max-width: 1200px) {
