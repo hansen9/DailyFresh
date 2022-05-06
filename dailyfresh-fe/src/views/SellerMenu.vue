@@ -45,7 +45,7 @@
 
 </script>
 
-<style>
+<style scoped>
 div.title_seller_menu{
     margin-top: 9rem;
     margin-bottom: 6rem;

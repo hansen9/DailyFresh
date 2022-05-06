@@ -73,9 +73,7 @@
                 <div class="col col-lg-7 address_seller">
                     <p>Produk: 2</p>
                     <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                        </svg>
+                        <i class="bi bi-geo-alt-fill"></i>
                         Jakarta
                     </p>
                 </div>
@@ -113,7 +111,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 /* Product information section */
 img.main_picture{
     width: 30rem;

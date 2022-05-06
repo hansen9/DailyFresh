@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     #my-orders{
         display: grid;
         grid-template-columns: 20% 20% 20% 20% 20%;

@@ -49,7 +49,7 @@
 
 </script>
 
-<style>
+<style scoped>
 div.edit_product{
     border: solid 1px #368e12;
     border-radius: 15px;
