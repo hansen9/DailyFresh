@@ -35,8 +35,8 @@
 
     <div id="payment_method">
       <h5>Metode Pembayaran</h5>
-      <button>Cash on Delivery</button>
-      <button>Bank Transfer</button>
+      <button class="pay_method">Cash on Delivery</button>
+      <button class="pay_method">Bank Transfer</button>
       <h6>Subtotal : RP64000</h6>
     </div>
 
@@ -120,5 +120,8 @@ export default {
   .product_picture{
     width: 25%;
     height: 25%;
+  }
+  .pay_method:focus{
+    background-color: aqua;
   }
 </style>
