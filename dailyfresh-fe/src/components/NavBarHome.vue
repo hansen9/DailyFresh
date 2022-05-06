@@ -1,6 +1,6 @@
 <template>
   <!-- <h1>{{ $offset }}</h1> -->
-  <div v-if="currentRoute == 'Home'" v-show="currentRoute != 'Login'">
+  <div v-if="currentRoute == 'Home'" v-show="currentRoute != 'Login' && currentRoute != 'Register'">
     <nav class="home">
       <router-link to="/" class="a d-flex align-items-center">
         <img src="../assets/DailyFresh2_white.png" alt="Daily Fresh Logo" />
@@ -42,7 +42,7 @@
     </nav>
   </div>
 
-  <div :style="{ 'margin-top': offset + 'px' }" v-else v-show="currentRoute != 'Login'">
+  <div :style="{ 'margin-top': offset + 'px' }" v-else v-show="currentRoute != 'Login' && currentRoute != 'Register'">
     <nav>
       <router-link to="/" class="a d-flex align-items-center">
         <img src="../assets/DailyFresh2_white.png" alt="Daily Fresh Logo" />
