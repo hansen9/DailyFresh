@@ -31,7 +31,7 @@
 
 </script>
 
-<style>
+<style scoped>
 div.card_item{
     max-width: 600px;
     margin-top: 1rem;

@@ -47,7 +47,7 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
 div.add_product{
     margin-top: 3rem;
     padding: 1rem;

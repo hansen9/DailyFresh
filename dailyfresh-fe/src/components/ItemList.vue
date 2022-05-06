@@ -31,7 +31,7 @@ export default {
   name: 'ItemList',
   methods: {
     goToCart(){
-      this.$router.push('/Detail-Product')
+      this.$router.push('/Detail_Product')
     }
   }
 }

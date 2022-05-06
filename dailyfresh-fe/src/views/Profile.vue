@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   #content{
     margin: 20px;
     display: grid;
