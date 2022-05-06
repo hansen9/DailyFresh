@@ -11,7 +11,7 @@
         <input type="password" />
         <p class="forgot-pass"><router-link to="/">Forgot your password?</router-link></p>
         <button class="align-self-center" type="button">Login</button>
-        <p class="not-registered">Not registered? <router-link to="/"> Create an Account </router-link></p>
+        <p class="not-registered">Not registered? <router-link to="/Register"> Create an Account </router-link></p>
       </form>
     </div>
   </div>
