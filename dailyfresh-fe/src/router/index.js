@@ -11,6 +11,7 @@ import ListProduct from "../views/ListProduct.vue";
 import EditProduct from "../views/EditProduct.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+import RegisterSeller from "../views/RegisterSeller.vue";
 
 const routes = [
   {
@@ -72,6 +73,11 @@ const routes = [
     path: "/Register",
     name: "Register",
     component: Register,
+  },
+  {
+    path: "/Register_Seller",
+    name: "RegisterSeller",
+    component: RegisterSeller,
   },
 ];
 

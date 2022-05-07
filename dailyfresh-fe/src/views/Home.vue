@@ -55,28 +55,36 @@
       </div>
       <div class="row category-items justify-content-center">
         <div class="col-lg-3 col-5">
-          <div class="category d-flex flex-column justify-content-end align-items-center">
-            <img src="../assets/Vegetables_Thumbnail.png" width="90%" />
-            <h2 class="mt-4">Veggies</h2>
-          </div>
+          <router-link to="/Products">
+            <div class="category d-flex flex-column justify-content-end align-items-center">
+              <img src="../assets/Vegetables_Thumbnail.png" />
+              <h2 class="mt-4">Veggies</h2>
+            </div>
+          </router-link>
         </div>
         <div class="col-lg-3 col-5">
-          <div class="category d-flex flex-column justify-content-end align-items-center">
-            <img src="../assets/Fruits_Thumbnail.png" width="90%" />
-            <h2 class="mt-4">Fruits</h2>
-          </div>
+          <router-link to="/Products">
+            <div class="category d-flex flex-column justify-content-end align-items-center">
+              <img src="../assets/Fruits_Thumbnail.png" />
+              <h2 class="mt-4">Fruits</h2>
+            </div>
+          </router-link>
         </div>
         <div class="col-lg-3 col-5">
-          <div class="category d-flex flex-column justify-content-end align-items-center">
-            <img src="../assets/Meat_Thumbnail.png" width="90%" />
-            <h2 class="mt-4">Meat</h2>
-          </div>
+          <router-link to="/Products">
+            <div class="category d-flex flex-column justify-content-end align-items-center">
+              <img src="../assets/Meat_Thumbnail.png" />
+              <h2 class="mt-4">Meat</h2>
+            </div>
+          </router-link>
         </div>
         <div class="col-lg-3 col-5">
-          <div class="category d-flex flex-column justify-content-end align-items-center">
-            <img src="../assets/Spices_Thumbnail.png" width="90%" />
-            <h2 class="mt-4">Spices</h2>
-          </div>
+          <router-link to="/Products">
+            <div class="category d-flex flex-column justify-content-end align-items-center">
+              <img src="../assets/Spices_Thumbnail.png" />
+              <h2 class="mt-4">Spices</h2>
+            </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -91,7 +99,9 @@
     <h1>Are you a <span class="font-color-green">seller?</span></h1>
     <h4>List your own store with <b>Daily Fresh!</b></h4>
     <img class="df-logo" src="../assets/DailyFreshLogo.png" alt="DailyFresh Logo" />
-    <div class="join-button d-flex justify-content-center align-items-center"><b>Join Now</b></div>
+    <router-link to="/Register_Seller">
+      <div class="join-button d-flex justify-content-center align-items-center"><b>Join Now</b></div>
+    </router-link>
   </section>
   <!-- List Store End -->
 </template>
@@ -222,6 +232,11 @@ div.category {
   cursor: pointer;
 }
 
+div a {
+  color: #198754;
+  text-decoration: none;
+}
+
 div.category:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.627);
   transform: scale(100%);
@@ -231,8 +246,8 @@ div.row h1 {
   padding: 2% 0 1%;
 }
 
-div.category-image {
-  height: 70%;
+div.category img {
+  width: 90%;
 }
 
 /* List Store */
@@ -272,9 +287,12 @@ section.list-store {
   color: #198754;
 }
 
+.list-store a {
+  width: 8%;
+}
+
 div.join-button {
   margin-top: 3%;
-  width: 8%;
   height: 8vh;
   border: 1px solid #198754;
   border-radius: 8px;
