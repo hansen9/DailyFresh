@@ -1,5 +1,4 @@
 <template>
-  <!-- <h1>{{ $offset }}</h1> -->
   <div v-if="currentRoute == 'Home'" v-show="currentRoute != 'Login' && currentRoute != 'Register'">
     <nav class="home">
       <router-link to="/" class="a d-flex align-items-center">

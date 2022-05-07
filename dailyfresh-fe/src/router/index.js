@@ -15,6 +15,8 @@ import HistorySeller from "../views/HistorySeller.vue"
 import ProcessSales from "../views/ProcessSales.vue";
 import AdminMenu from "../views/AdminMenu.vue"
 import BlockUser from "../views/BlockUser.vue"
+import RegisterSeller from "../views/RegisterSeller.vue";
+
 
 const routes = [
   {
@@ -96,6 +98,11 @@ const routes = [
     path: "/Block_User",
     name: "BlockUser",
     component: BlockUser,
+  },
+  {
+    path: "/Register_Seller",
+    name: "RegisterSeller",
+    component: RegisterSeller,
   },
 ];
 
