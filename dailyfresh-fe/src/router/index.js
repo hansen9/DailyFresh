@@ -5,12 +5,16 @@ import Checkout from "../views/Checkout.vue";
 import Cart from "../views/CartView.vue";
 import DetailProduct from "../views/DetailProduct.vue";
 import Profile from "../views/Profile.vue";
-import AddProduct from "@/views/AddProduct.vue";
+import AddProduct from "../views/AddProduct.vue";
 import Seller from "../views/SellerMenu.vue";
 import ListProduct from "../views/ListProduct.vue";
 import EditProduct from "../views/EditProduct.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+import HistorySeller from "../views/HistorySeller.vue"
+import ProcessSales from "../views/ProcessSales.vue";
+import AdminMenu from "../views/AdminMenu.vue"
+import BlockUser from "../views/BlockUser.vue"
 
 const routes = [
   {
@@ -55,11 +59,11 @@ const routes = [
   },
   {
     path: "/List_Product",
-    name: "List Product",
+    name: "ListProduct",
     component: ListProduct,
   },
   {
-    path: "/Edit_product",
+    path: "/Edit_Product",
     name: "Edit Product",
     component: EditProduct,
   },
@@ -72,6 +76,26 @@ const routes = [
     path: "/Register",
     name: "Register",
     component: Register,
+  },
+  {
+    path: "/History_Seller",
+    name: "History",
+    component: HistorySeller,
+  },
+  {
+    path: "/Process_Sales",
+    name: "ProcessSales",
+    component: ProcessSales,
+  },
+  {
+    path: "/Admin_Menu",
+    name: "AdminMenu",
+    component: AdminMenu,
+  },
+  {
+    path: "/Block_User",
+    name: "BlockUser",
+    component: BlockUser,
   },
 ];
 

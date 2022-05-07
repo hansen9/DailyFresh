@@ -62,6 +62,6 @@ div.header_edit{
 }
 
 div.image_product img{
-    width: 400px;
+    width: 100%;
 }
 </style>
