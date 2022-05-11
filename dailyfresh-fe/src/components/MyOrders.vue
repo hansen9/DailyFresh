@@ -6,11 +6,11 @@
         <i class="bi bi-box2 my-order"></i>
         <i class="bi bi-truck my-order"></i>
         <i class="bi bi-check-all my-order"></i>
-        <p>semua</p>
-        <p>belum dibayar</p>
-        <p>dikemas</p>
-        <p>dikirim</p>
-        <p>diterima</p>
+        <label>semua</label>
+        <label>belum dibayar</label>
+        <label>dikemas</label>
+        <label>dikirim</label>
+        <label>diterima</label>
     </div>
     <div id="history">
 

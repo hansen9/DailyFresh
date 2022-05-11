@@ -13,7 +13,6 @@
           <ProfileInfo />
         </div>
         
-
         <!-- My Orders -->
         <div v-if="componentClicked == 2">
           <MyOrders />
@@ -74,7 +73,7 @@ export default {
     float: right;
     font-size: 1rem;
   }
-  p{
+  label{
     cursor: pointer;
   }
   button{
