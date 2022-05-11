@@ -1,4 +1,6 @@
 <template>
+<div>
+  
   <!-- Header Cart -->
   <div class="container title_cart">
     <h2>Keranjang</h2>
@@ -40,6 +42,7 @@
     </div>
   </div>
   <!-- Checkout End -->
+</div>
 </template>
 
 <script>

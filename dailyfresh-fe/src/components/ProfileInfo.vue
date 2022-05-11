@@ -16,13 +16,13 @@
     <hr>
     <h1>Account</h1>
     <div id="account">
-        <p>change profile<i class="bi bi-chevron-right"></i></p>
+        <label>change profile<i class="bi bi-chevron-right"></i></label>
         <hr>
-        <p>manage account<i class="bi bi-chevron-right"></i></p>
+        <label>manage account<i class="bi bi-chevron-right"></i></label>
         <hr>
-        <p>payment method<i class="bi bi-chevron-right"></i></p>
+        <label>payment method<i class="bi bi-chevron-right"></i></label>
         <hr>
-        <p>change language<i class="bi bi-chevron-right"></i></p>
+        <label>change language<i class="bi bi-chevron-right"></i></label>
         <hr>
     </div>
 </template>

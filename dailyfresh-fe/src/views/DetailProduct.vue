@@ -1,16 +1,21 @@
 <template>
+    <div>
         <!-- Product Picture -->
         <section class="product_information">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <img src="../assets/carrot.png" class="rounded float-start main_picture" alt="product daily fresh">
+                    <img 
+                    :key="good.image"
+                    :src="imagePath" 
+                    class="rounded float-start main_picture" 
+                    :alt="good.name">
                 </div>
                 
                 <!-- Product Information -->
                 <div class="col-lg-6 information_product">
                     <div class="product_title">
-                        <h1>Wortel 500gr</h1>
+                        <h1>{{ good.name }}</h1>
                     </div>
                     <div class="rating">
                         <span class="rate">4.5</span>
@@ -22,11 +27,11 @@
                         <span>Terjual 2</span>
                     </div>
                     <div class="price">
-                        <h1>Rp.16000</h1>
+                        <h1>Rp.{{ good.price }}</h1>
                         <hr class="hr_color">
                     </div>
                     <div class="information">
-                        <p>Pengiriman: dikirim dari Jakarta</p>
+                        <p>pengiriman dari: {{ seller.seller_address }}</p>
                         <form>
                             <div class="form-group quantity_product">
                                 <label for="kuantitas_pemesanan">Kuantitas: </label>
@@ -34,17 +39,23 @@
                             </div>
                         </form>
                         <br>
-                        <p>Stock: <span>50</span></p>
+                        <p>Stock: <span>{{ good.stock }}</span>  </p>
                     </div>
                     <!-- Button action -->
                     <div class="button_action_customer">
                         <router-link to="/Cart">
-                            <button type="button" class="btn btn-outline-success button_action">
+                            <button 
+                            type="button" 
+                            class="btn btn-outline-success button_action"
+                            @click="addToCart">
                                 <i class="bi bi-cart3"></i>
                                 Masukkan Keranjang
                             </button>
                         </router-link>
-                        <button type="button" class="btn btn-success button_action">Beli Sekarang</button>
+                        <button 
+                        type="button" 
+                        class="btn btn-success button_action"
+                        >Beli Sekarang</button>
                         <button type="button" class="btn btn-outline-success button_action">
                             <i class="bi bi-heart-fill"></i>
                             Favorite
@@ -66,15 +77,19 @@
                 </div>
 
                 <div class="col col-lg-4 info_toko">
-                    <p>FreshSegar</p> <!-- Nama penjual -->
+                    <!-- <p>FreshSegar</p> Nama penjual -->
+                    <p>{{ seller.shop_name }}</p>
                     <button type="button" class="btn btn-outline-success btn-sm">Kunjungi Toko</button>
                 </div>
 
                 <div class="col col-lg-7 address_seller">
                     <p>Produk: 2</p>
                     <p>
-                        <i class="bi bi-geo-alt-fill"></i>
-                        Jakarta
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                        {{ seller.seller_address }}
+                        {{ good.seller_id }}
                     </p>
                 </div>
             </div>
@@ -89,25 +104,53 @@
                     <h4>Deskripsi Produk</h4>
                 </div>
                 <div class="container desc_product">
-                    <p>Kondisi: Baru</p>
-                    <p>Kategori: Sayuran</p>
-                    <p>Berat: 500gr</p>
-                    <p>
-                        Wortel Brastagi 500 gr (3-4 buah) [Harga Pasar]
-                        Produk bervariasi di 400-600 gr (tergantung hasil panen)
-                        Wortel Brastagi adalah wortel asli Brastagi, Medan. Ini memiliki warna oranye cerah dan kulit halus. Wortel jenis ini sangat mudah dibersihkan; kupas saja dan nikmatilah!
-
-                        Kemasan
-                        Wortel Brastagi akan dikemas dalam kemasan plastik
-                    </p>
+                    <p> {{ good.description }} </p>
                 </div>
             </div>
         </section>
         <!-- Description Product End -->
+    </div>
 </template>
 
 <script>
+import CartService from '../services/CartService.js';
+import Axios from 'axios'
 
+export default{
+    computed: {
+        imagePath(){
+            return `/images/goods/${this.good.image}`
+        }
+    },
+    data() {
+        return{
+            cartService: new CartService(),
+            good: [],
+            id: '',
+            seller: []
+        };
+    },
+    created(){
+        this.id = this.$route.params.id;
+        Axios.get(`http://localhost:8080/goods?id=${this.id}`).then((Response)=>{
+            this.good = Response.data.data[0];
+            console.log(this.good.seller_id)
+        });
+        Axios.get(`http://localhost:8080/seller?id=${this.good.seller_id}`).then((Response)=>{
+            this.seller = Response.data.data[0];
+            // console.log(this.good.seller_id)
+        });
+    },
+    methods: {
+        
+        // addToCart() {
+        //     this.cartService.addToCart({
+        //         ...this.item,
+        //         quantity:1//ganti ke jumlah yg dikasih
+        //     })
+        // }
+    }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -182,6 +225,9 @@ div.address_seller{
 }
 
 /* Desc section */
+.description_product{
+    margin: 20px;
+}
 div.desc_header{
     color: white;
     background-color: #368e12;
@@ -192,5 +238,10 @@ div.detail_product{
     padding-left: 0;
     padding-right: 0;
     border-style: groove;
+}
+.desc_product{
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 </style>
