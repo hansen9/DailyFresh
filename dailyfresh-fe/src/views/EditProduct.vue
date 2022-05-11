@@ -49,7 +49,7 @@
 
 </script>
 
-<style>
+<style scoped>
 div.edit_product{
     border: solid 1px #368e12;
     border-radius: 15px;
@@ -57,11 +57,11 @@ div.edit_product{
 }
 
 div.header_edit{
-    margin-top: 2rem;
+    margin-top: 8rem;
     margin-bottom: 2rem;
 }
 
 div.image_product img{
-    width: 400px;
+    width: 100%;
 }
 </style>

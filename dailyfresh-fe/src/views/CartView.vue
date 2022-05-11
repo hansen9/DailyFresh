@@ -68,7 +68,7 @@ div.header_cart h5 {
   padding: 10px 0;
 }
 div.title_cart {
-  margin-top: 1rem;
+  margin-top: 8rem;
   margin-bottom: 1rem;
   color: #368e12;
 }

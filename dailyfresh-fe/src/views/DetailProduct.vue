@@ -154,7 +154,7 @@ export default{
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 /* Product information section */
 img.main_picture{
     width: 30rem;

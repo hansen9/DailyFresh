@@ -24,9 +24,9 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
 div.title_list{
-    margin-top: 2rem;
+    margin-top: 8rem;
     margin-bottom: 2rem;
 }
 </style>

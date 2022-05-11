@@ -30,7 +30,7 @@
 
 <script></script>
 
-<style>
+<style scoped>
 /* cart */
 img.product_picture {
   width: 100%;
