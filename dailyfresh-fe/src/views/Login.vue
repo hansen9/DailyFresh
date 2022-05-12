@@ -4,11 +4,11 @@
       <router-link to="/">
         <img src="../assets/DailyFresh2.png" alt="df_logo" class="img-fluid" />
       </router-link>
-      <form v-on:submit.prevent="loginForm" class="d-flex flex-column justify-content-between">
+      <form @submit.prevent="loginSubmit" class="d-flex flex-column justify-content-between">
         <label for="email">Email</label>
-        <input v-model="user.email" type="email" id="email" placeholder="dailyfresh@email.com" />
+        <input v-model="email" type="email" id="email" placeholder="dailyfresh@email.com" />
         <label for="password">Password</label>
-        <input v-model="user.password" type="password" />
+        <input v-model="password" type="password" />
         <p class="forgot-pass"><router-link to="/">Forgot your password?</router-link></p>
         <button class="align-self-center">Login</button>
         <p class="not-registered">Not Registered? <router-link to="/Register"> Create an Account </router-link></p>
@@ -23,18 +23,22 @@ export default {
   name: "LoginPage",
   data() {
     return {
-      user: {
-        email: "",
-        password: "",
-      },
+      email: "",
+      password: "",
     };
   },
   methods: {
-    loginForm() {
+    loginSubmit() {
+      let formData = new FormData();
+      formData.append("email", this.email);
+      formData.append("password", this.password);
+
       axios
-        .get("http://localhost:8080/login", this.user)
+        .post("http://localhost:8080/login", formData, { withCredentials: true })
         .then((res) => {
           console.log(res);
+          localStorage.setItem("userName", res.data.data.name);
+          localStorage.setItem("userType", res.data.data.type_person);
           location.replace("/");
         })
         .catch((err) => {
