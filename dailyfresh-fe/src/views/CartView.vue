@@ -25,8 +25,8 @@
   <!-- Header Cart End -->
 
   <!-- Cart -->
-  <div class="container item_cart" v-for="item in 4" :key="item">
-    <CartList />
+  <div class="container item_cart" v-for="cart in carts.data" :key="cart.id">
+    <CartList :item="cart"/>
     <hr />
   </div>
 
@@ -34,7 +34,9 @@
   <div class="container">
     <div class="row checkout_product align-items-center">
       <div class="col col-lg-10">
-        <h3>Subtotal <span>harga</span></h3>
+        <!-- Belum beres menghitung total item di cart -->
+        <h3>Subtotal <span v-for="item in carts.data" :key="item.id"><!-- {{sumPrice(item.price, item.quantity)}}--></span></h3>
+        <p>{{total}}</p>
       </div>
       <div class="col col-lg-2">
         <button class="btn btn-success btn-lg" @click="$router.push('/Checkout')">Checkout</button>
@@ -46,6 +48,7 @@
 </template>
 
 <script>
+import axios from "axios"
 import CartList from "../components/CartList.vue";
 
 export default {
@@ -53,6 +56,27 @@ export default {
   components: {
     CartList,
   },
+  data() {
+    return{
+      carts: [],
+      // total: 0
+    };
+  },
+  methods: {
+    fetchCart(){
+      axios
+        .get("http://localhost:8080/cart/detail?id=2")
+        .then((res) =>{
+          this.carts = res.data;
+        })
+    },
+    // sumPrice(price, quantity){
+    //   this.total += (price * quantity)
+    // }
+  },
+  mounted(){
+    this.fetchCart();
+  }
 };
 </script>
 
