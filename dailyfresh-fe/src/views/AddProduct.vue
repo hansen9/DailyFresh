@@ -95,6 +95,7 @@ export default{
 <style scoped>
 div.add_product{
     margin-top: 3rem;
+    margin-bottom: 2rem;
     padding: 1rem;
     width: 60%;
     border-radius: 15px;
