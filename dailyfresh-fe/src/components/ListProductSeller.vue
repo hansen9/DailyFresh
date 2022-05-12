@@ -2,7 +2,7 @@
     <div class="list container">
         <div class="card_item card">
             <div class="row g-0">
-                <div class="col-md-4">
+                <div class="size_img col-md-4">
                     <img 
                     :src="imagePath" 
                     class="img-fluid rounded-start" 
@@ -50,6 +50,14 @@ export default{
 </script>
 
 <style scoped>
+div.size_img{
+    height: 200px;
+}
+
+div.size_img img{
+    width: 200px;
+}
+
 div.card_item{
     max-width: 600px;
     margin-top: 1rem;
