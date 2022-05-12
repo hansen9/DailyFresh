@@ -8,25 +8,25 @@
                 <form action="#">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Name</span>
-                        <input type="text" class="form-control" id="name" value="">
+                        <input type="text" class="form-control" id="name" v-model="product_name">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Stock</span>
-                        <input type="number" class="form-control" min="0" id="stock" value="">
+                        <input type="number" class="form-control" min="0" id="stock" v-model="stock">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Price</span>
-                        <input type="number" class="form-control" min="0" id="price" value="">
+                        <input type="number" class="form-control" min="0" id="price" v-model="price">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Description</span>
-                        <input type="text" class="form-control" id="description" value="">
+                        <input type="text" class="form-control" id="description" v-model="description">
                     </div>
                     <p>
                         Choose product picture:
                     </p>
                     <div class="input-group mb-3">
-                        <input type="file" class="form-control" id="add_picture" value="">
+                        <input type="file" class="form-control" id="add_picture">
                     </div>
                     <div class="d-md-flex justify-content-md-end">
                         <button type="submit" value="submit" class="btn btn-success" @click="alertSuccess">Submit</button>
@@ -38,10 +38,33 @@
 </template>
 
 <script>
+import axios from "axios"
 export default{
+    mounted(){
+        this.postProduct()
+    },
+    data(){
+        return{
+
+        }
+    },
     methods: {
         alertSuccess(){
             alert("Berhasil ditambahkan")
+        },
+        postProduct(){
+            //ganti this.product jadi user_id dari login
+            axios
+            .post(
+                `localhost:8080/goods`,
+                {
+                    product_name: this.product_name,
+                    price: this.price,
+                    stock: this.stock,
+                    desc: this.description
+                    //seller: this.user.user_id
+                }
+            )
         }
     }
 }
