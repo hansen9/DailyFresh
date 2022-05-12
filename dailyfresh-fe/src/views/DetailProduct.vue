@@ -35,7 +35,7 @@
                         <form>
                             <div class="form-group quantity_product">
                                 <label for="kuantitas_pemesanan">Kuantitas: </label>
-                                <input type="number" class="form-control" min="0"/>
+                                <input id="qty" type="number" class="form-control" min="0"/>
                             </div>
                         </form>
                         <br>
@@ -43,7 +43,7 @@
                     </div>
                     <!-- Button action -->
                     <div class="button_action_customer">
-                        <router-link to="/Cart">
+                        
                             <button 
                             type="button" 
                             class="btn btn-outline-success button_action"
@@ -51,7 +51,6 @@
                                 <i class="bi bi-cart3"></i>
                                 Masukkan Keranjang
                             </button>
-                        </router-link>
                         <button 
                         type="button" 
                         class="btn btn-success button_action"
@@ -126,7 +125,8 @@ export default{
             cartService: new CartService(),
             good: [],
             id: '',
-            seller: []
+            seller: [],
+            qty: 0
         };
     },
     created(){
@@ -140,6 +140,25 @@ export default{
         
     },
     methods: {
+
+        addToCart(){
+            this.qty = document.getElementById('qty').value
+            let formData = new FormData();
+
+            formData.append("quantity", this.qty);
+            formData.append("goods_id", this.id);
+
+            Axios
+                .post("http://localhost:8080/cart/detail/add?cart_id=2", formData)
+                .then((res) => {
+                    if(res.status == 200){
+                        location.replace("/cart");
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        }
         
         // addToCart() {
         //     this.cartService.addToCart({
@@ -147,7 +166,7 @@ export default{
         //         quantity:1//ganti ke jumlah yg dikasih
         //     })
         // }
-    }
+    },
 }
 </script>
 
