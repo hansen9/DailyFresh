@@ -4,13 +4,13 @@
       <router-link to="/">
         <img src="../assets/DailyFresh2.png" alt="df_logo" class="img-fluid" />
       </router-link>
-      <form class="d-flex flex-column justify-content-between" action="#">
+      <form v-on:submit.prevent="loginForm" class="d-flex flex-column justify-content-between">
         <label for="email">Email</label>
-        <input type="email" id="email" placeholder="dailyfresh@email.com" />
+        <input v-model="user.email" type="email" id="email" placeholder="dailyfresh@email.com" />
         <label for="password">Password</label>
-        <input type="password" />
+        <input v-model="user.password" type="password" />
         <p class="forgot-pass"><router-link to="/">Forgot your password?</router-link></p>
-        <button class="align-self-center" type="button">Login</button>
+        <button class="align-self-center">Login</button>
         <p class="not-registered">Not Registered? <router-link to="/Register"> Create an Account </router-link></p>
       </form>
     </div>
@@ -18,8 +18,31 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "LoginPage",
+  data() {
+    return {
+      user: {
+        email: "",
+        password: "",
+      },
+    };
+  },
+  methods: {
+    loginForm() {
+      axios
+        .get("http://localhost:8080/login", this.user)
+        .then((res) => {
+          console.log(res);
+          location.replace("/");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+  created() {},
 };
 </script>
 
