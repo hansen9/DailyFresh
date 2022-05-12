@@ -16,7 +16,8 @@ import ProcessSales from "../views/ProcessSales.vue";
 import AdminMenu from "../views/AdminMenu.vue"
 import BlockUser from "../views/BlockUser.vue"
 import RegisterSeller from "../views/RegisterSeller.vue";
-
+import CustomerService from "../views/CustomerService.vue";
+import ListComplaint from "../views/ListComplaint.vue"
 
 const routes = [
   {
@@ -113,6 +114,16 @@ const routes = [
     path: "/register_seller",
     name: "RegisterSeller",
     component: RegisterSeller,
+  },
+  {
+    path: "/list_complaint",
+    name: "ListComplaint",
+    component: ListComplaint,
+  },
+  {
+    path: "/customer_service",
+    name: "CustomerService",
+    component: CustomerService,
   },
 ];
 

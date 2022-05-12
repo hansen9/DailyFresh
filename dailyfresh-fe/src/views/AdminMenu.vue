@@ -10,14 +10,14 @@
         <div class="seller_menu row justify-content-center">
             <div class="detail_menu col-2 d-flex flex-column align-items-center justify-content-center">
                 <i class="button_menu bi bi-x-square-fill"></i>
-                <router-link class="link" to="/Block_User">
+                <router-link class="link" to="/block_user">
                     <h4>Block User</h4>
                 </router-link>
             </div>
 
             <div class="detail_menu col-2 d-flex flex-column align-items-center justify-content-center">
                 <i class="button_menu bi bi-mailbox2"></i>
-                <router-link class="link" to="/Customer_Service">
+                <router-link class="link" to="/list_complaint">
                     <h4 class="text-center">Customer Service</h4>
                 </router-link>
             </div>
