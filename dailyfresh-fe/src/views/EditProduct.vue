@@ -6,7 +6,9 @@
             </div>
             <div class="row edit_product">
                 <div class="image_product col-4">
-                    <img src="../assets/broccoli.png" alt="Nama produk">
+                    <img 
+                    :src="imagePath" 
+                    :alt="good.name">
                 </div>
                 <div class="col-8">
                     <form action="#">
@@ -33,7 +35,7 @@
                             <input type="file" class="form-control" id="add_picture" value="">
                         </div>
                         <div class="d-md-flex justify-content-md-end">
-                            <button type="submit" value="submit" class="btn btn-outline-success" @click="alertSuccess">
+                            <button type="submit" value="submit" class="btn btn-outline-success" @click="updateProducts">
                                 <i class="bi bi-save2-fill"></i>
                                 Save
                             </button>
@@ -46,7 +48,31 @@
 </template>
 
 <script>
-
+import Axios from 'axios'
+export default{
+    data(){
+        return{
+            good: []
+        }
+    },
+    computed: {
+        imagePath(){
+            return `/images/goods/${this.good.image}`
+        }
+    },
+    created(){
+        this.id = this.$route.params.id;
+        Axios.get(`http://localhost:8080/goods?id=${this.id}`).then((Response)=>{
+            this.good = Response.data.data[0];
+        });
+        
+    },
+    methods: {
+        updateProducts(){
+            alert("update products success")
+        }
+    }
+}
 </script>
 
 <style scoped>
