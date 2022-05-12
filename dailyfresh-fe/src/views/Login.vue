@@ -31,11 +31,16 @@ export default {
   },
   methods: {
     loginForm() {
+      let formData = new FormData();
+      formData.append("email", this.user.email);
+      formData.append("password", this.user.password);
       axios
-        .get("http://localhost:8080/login", this.user)
+        .post("http://localhost:8080/login", formData)
         .then((res) => {
           console.log(res);
-          location.replace("/");
+          if(res.status == 200){
+            location.replace("/");
+          }
         })
         .catch((err) => {
           console.log(err);
