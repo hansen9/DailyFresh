@@ -75,6 +75,11 @@ const routes = [
     component: EditProduct,
   },
   {
+    path: "/edit_product/:id",
+    name: "Edit Product",
+    component: EditProduct,
+  },
+  {
     path: "/login",
     name: "Login",
     component: Login,

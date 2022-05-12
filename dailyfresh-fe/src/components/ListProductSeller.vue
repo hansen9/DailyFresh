@@ -3,15 +3,21 @@
         <div class="card_item card">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="../assets/broccoli.png" class="img-fluid rounded-start" alt="Nama produk">
+                    <img 
+                    :src="imagePath" 
+                    class="img-fluid rounded-start" 
+                    :alt="item.name"
+                    :key="item.image" >
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h4 class="name_product card-title">Card title</h4>
-                        <p class="description_product card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h4 class="name_product card-title">{{ item.name }}</h4>
+                        <p class="description_product card-text">
+                            {{ item.description }}
+                        </p>
 
                         <div class="main_button">
-                            <button type="button" class="btn btn-outline-info btn-sm" @click="$router.push('/Edit_Product')">
+                            <button type="button" class="btn btn-outline-info btn-sm" @click="goToEditProduct">
                                 <i class="bi bi-pencil"></i>
                                 Edit
                             </button>
@@ -28,7 +34,19 @@
 </template>
 
 <script>
-
+export default{
+    props: ["item", "index"],
+    computed: {
+        imagePath(){
+        return `/images/goods/${this.item.image}`
+        }
+    },
+    methods: {
+        goToEditProduct(){
+            this.$router.push(`/Edit_Product/${this.item.id}`)
+        }
+    }
+}
 </script>
 
 <style scoped>

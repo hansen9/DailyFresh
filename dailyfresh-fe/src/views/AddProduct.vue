@@ -5,14 +5,18 @@
                 <div class="header_add mb-3">
                     <h2 class="color_h2">Add Product</h2>
                 </div>
-                <form action="#">
+                <form @submit.prevent="postProduct" method="post">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Name</span>
-                        <input type="text" class="form-control" id="name" v-model="product_name">
+                        <input type="text" class="form-control" id="name" v-model="name">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Stock</span>
                         <input type="number" class="form-control" min="0" id="stock" v-model="stock">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Category</span>
+                        <input type="text" class="form-control" id="category" v-model="category">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Price</span>
@@ -29,7 +33,7 @@
                         <input type="file" class="form-control" id="add_picture">
                     </div>
                     <div class="d-md-flex justify-content-md-end">
-                        <button type="submit" value="submit" class="btn btn-success" @click="alertSuccess">Submit</button>
+                        <button type="submit" value="submit" class="btn btn-success">Submit</button>
                     </div>
                 </form>
             </div>
@@ -40,12 +44,17 @@
 <script>
 import axios from "axios"
 export default{
-    mounted(){
-        this.postProduct()
-    },
     data(){
         return{
-
+            post :{
+                name: "",
+                price: "",
+                stock: "",
+                category: "",
+                description: "",
+                image: "kentang_dieng.png"
+            }
+            
         }
     },
     methods: {
@@ -53,18 +62,26 @@ export default{
             alert("Berhasil ditambahkan")
         },
         postProduct(){
-            //ganti this.product jadi user_id dari login
-            axios
-            .post(
-                `localhost:8080/goods`,
-                {
-                    product_name: this.product_name,
-                    price: this.price,
-                    stock: this.stock,
-                    desc: this.description
-                    //seller: this.user.user_id
-                }
-            )
+            let formData = new FormData();
+
+            formData.append("name", this.post.name);
+            formData.append("price", this.post.price);
+            formData.append("stock", this.post.stock);
+            formData.append("category", this.post.category);
+            formData.append("description", this.post.description);
+            formData.append("image", this.post.image);
+
+            axios.post(
+                "localhost:8080/goods?seller_id=2",
+                formData
+            ).then((res) =>{
+                console.log(res);
+                console.log(formData)
+            })
+            .catch((err) => {
+                console.log(err);
+                console.log(formData)
+            });
         }
     }
 }
