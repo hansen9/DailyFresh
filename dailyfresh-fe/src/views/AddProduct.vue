@@ -5,26 +5,26 @@
                 <div class="header_add mb-3">
                     <h2 class="color_h2">Add Product</h2>
                 </div>
-                <form @submit.prevent="postProduct" method="post">
+                <form @submit.prevent="postProduct">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Name</span>
-                        <input type="text" class="form-control" id="name" v-model="name">
+                        <input type="text" class="form-control" id="name" v-model="post.name">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Stock</span>
-                        <input type="number" class="form-control" min="0" id="stock" v-model="stock">
+                        <input type="number" class="form-control" min="0" id="stock" v-model="post.stock">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Category</span>
-                        <input type="text" class="form-control" id="category" v-model="category">
+                        <input type="text" class="form-control" id="category" v-model="post.category">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Price</span>
-                        <input type="number" class="form-control" min="0" id="price" v-model="price">
+                        <input type="number" class="form-control" min="0" id="price" v-model="post.price">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Description</span>
-                        <input type="text" class="form-control" id="description" v-model="description">
+                        <input type="text" class="form-control" id="description" v-model="post.description">
                     </div>
                     <p>
                         Choose product picture:
@@ -52,7 +52,8 @@ export default{
                 stock: "",
                 category: "",
                 description: "",
-                image: "kentang_dieng.png"
+                image: "kentang_dieng.png",
+                seller_id: '2'
             }
             
         }
@@ -61,26 +62,30 @@ export default{
         alertSuccess(){
             alert("Berhasil ditambahkan")
         },
-        postProduct(){
-            let formData = new FormData();
+        async postProduct(){
+            const FormData = require('form-data')
+            
+            const formData = new FormData();
 
-            formData.append("name", this.post.name);
-            formData.append("price", this.post.price);
-            formData.append("stock", this.post.stock);
-            formData.append("category", this.post.category);
-            formData.append("description", this.post.description);
-            formData.append("image", this.post.image);
+            formData.append('name', this.post.name);
+            formData.append('price', this.post.price);
+            formData.append('stock', this.post.stock);
+            formData.append('category', this.post.category);
+            formData.append('description', this.post.description);
+            formData.append('image', this.post.image);
 
-            axios.post(
-                "localhost:8080/goods?seller_id=2",
+            await axios.post(
+                'http://localhost:8080/goods?seller_id=2',
                 formData
-            ).then((res) =>{
+            ).then(res =>{
                 console.log(res);
-                console.log(formData)
+                console.log(this.post)
+                alert("update products success")
             })
-            .catch((err) => {
+            .catch(err => {
                 console.log(err);
-                console.log(formData)
+                console.log(this.post);
+                alert("update products failed")
             });
         }
     }
