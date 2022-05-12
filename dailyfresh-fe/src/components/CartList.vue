@@ -46,15 +46,12 @@ export default{
   },
   methods: {
     deleteItem(){
-      // let formData = new FormData();
-      // formData.append("goods_id", this.item.goods_id);
-      // console.log(this.item.goods_id)
-      const data = {
-        id: this.item.goods_id
-      }
+      let formData = new FormData();
+      formData.append("goods_id", this.item.goods_id);
+      console.log(this.item.goods_id)
       
       axios
-        .delete("http://localhost:8080/cart/detail/remove?cart_id=2", {data})
+        .delete("http://localhost:8080/cart/detail/remove?cart_id=2", {formData})
         .then((res) => {
           console.log(res.status);
         })
