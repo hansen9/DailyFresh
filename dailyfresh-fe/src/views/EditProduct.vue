@@ -11,31 +11,31 @@
                     :alt="good.name">
                 </div>
                 <div class="col-8">
-                    <form action="#">
+                    <form @submit.prevent="updateProducts">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Product Name</span>
-                            <input type="text" class="form-control" id="name" value="">
+                            <input type="text" class="form-control" id="name" v-model="post.name">
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Stock</span>
-                            <input type="number" class="form-control" min="0" id="stock" value="">
+                            <input type="number" class="form-control" min="0" id="stock" v-model="post.stock">
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Price</span>
-                            <input type="number" class="form-control" min="0" id="price" value="">
+                            <input type="number" class="form-control" min="0" id="price" v-model="post.price">
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Product Description</span>
-                            <input type="text" class="form-control" id="description" value="">
+                            <input type="text" class="form-control" id="description" v-model="post.description">
                         </div>
                         <p>
                             Choose new product picture:
                         </p>
                         <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="add_picture" value="">
+                            <input type="file" class="form-control" id="add_picture">
                         </div>
                         <div class="d-md-flex justify-content-md-end">
-                            <button type="submit" value="submit" class="btn btn-outline-success" @click="updateProducts">
+                            <button type="submit" value="submit" class="btn btn-outline-success">
                                 <i class="bi bi-save2-fill"></i>
                                 Save
                             </button>
@@ -52,7 +52,16 @@ import Axios from 'axios'
 export default{
     data(){
         return{
-            good: []
+            good: [],
+            id: '',
+            post: {
+                name: "",
+                price: "",
+                stock: "",
+                category: "",
+                description: "",
+                image: 'wortel-800-gr.png',
+            },
         }
     },
     computed: {
@@ -68,8 +77,32 @@ export default{
         
     },
     methods: {
-        updateProducts(){
-            alert("update products success")
+        async updateProducts(){
+            const FormData = require('form-data');
+
+            const formData = new FormData();
+
+            formData.append('name', this.post.name)
+            formData.append('price', this.post.price)
+            formData.append('stock', this.post.stock)
+            formData.append('description', this.post.description)
+            formData.append('image', this.post.image)
+            formData.append('id', this.good.id)
+            
+            await Axios.put(
+                `http://localhost:8080/goods`,
+                formData
+            ).then(res =>{
+                console.log(res);
+                console.log(this.post)
+                alert("update products success")
+            })
+            .catch(err => {
+                console.log(err);
+                console.log(this.post);
+                alert("update products failed")
+            });
+            
         }
     }
 }
