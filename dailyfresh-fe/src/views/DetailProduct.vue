@@ -79,17 +79,16 @@
                 <div class="col col-lg-4 info_toko">
                     <!-- <p>FreshSegar</p> Nama penjual -->
                     <p>{{ seller.shop_name }}</p>
-                    <button type="button" class="btn btn-outline-success btn-sm">Kunjungi Toko</button>
+                    <!-- <button type="button" class="btn btn-outline-success btn-sm">Kunjungi Toko</button> -->
                 </div>
 
                 <div class="col col-lg-7 address_seller">
-                    <p>Produk: 2</p>
+                    <p>Alamat</p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
                         </svg>
                         {{ seller.seller_address }}
-                        {{ good.seller_id }}
                     </p>
                 </div>
             </div>
@@ -134,12 +133,11 @@ export default{
         this.id = this.$route.params.id;
         Axios.get(`http://localhost:8080/goods?id=${this.id}`).then((Response)=>{
             this.good = Response.data.data[0];
-            console.log(this.good.seller_id)
+            Axios.get(`http://localhost:8080/seller/${this.good.seller_id}`).then((Response)=>{
+                this.seller = Response.data.data[0];
+            });
         });
-        Axios.get(`http://localhost:8080/seller?id=${this.good.seller_id}`).then((Response)=>{
-            this.seller = Response.data.data[0];
-            // console.log(this.good.seller_id)
-        });
+        
     },
     methods: {
         

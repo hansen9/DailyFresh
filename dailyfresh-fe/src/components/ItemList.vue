@@ -27,7 +27,7 @@ export default {
   props: ["item", "index"],
   computed: {
     imagePath(){
-      return `images/goods/${this.item.image}`
+      return `/images/goods/${this.item.image}`
     }
   },
   name: 'ItemList',
