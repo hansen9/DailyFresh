@@ -9,7 +9,7 @@
       </div>
       <div class="album py-5 bg-light">
         <div class="container">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="row row-cols-md-3 g-3">
             <div v-for="good in goods.data" :key="good.id">
               <ItemList :item="good" />
             </div>

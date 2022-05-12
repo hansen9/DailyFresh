@@ -6,8 +6,8 @@
             </h2>
         </div>
         <div class="list_product row" >
-            <div class="col-6" v-for="(item) in 4" :key="item">
-                <ListProductSeller/>
+            <div class="col-6" v-for="product in products.data" :key="product.id">
+                <ListProductSeller :item="product"/>
             </div>
         </div>
     </div>
@@ -15,11 +15,27 @@
 
 <script>
 import ListProductSeller from "../components/ListProductSeller.vue"
+import axios from "axios"
 
 export default{
     name: 'ListPage',
+    mounted(){
+        this.fetchProducts()
+    },
     components:{
         ListProductSeller,
+    },
+    data(){
+        return{
+            products: []
+        }
+    },
+    methods: {
+        async fetchProducts(){
+            //ganti this.product jadi user_id dari login
+            const res = await axios.get(`http://localhost:8080/goods/by_seller?seller_id=2`);
+            this.products = res.data;
+        }
     }
 }
 </script>

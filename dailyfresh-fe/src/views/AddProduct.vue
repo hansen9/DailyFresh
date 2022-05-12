@@ -5,31 +5,35 @@
                 <div class="header_add mb-3">
                     <h2 class="color_h2">Add Product</h2>
                 </div>
-                <form action="#">
+                <form @submit.prevent="postProduct">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Name</span>
-                        <input type="text" class="form-control" id="name" value="">
+                        <input type="text" class="form-control" id="name" v-model="post.name">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Stock</span>
-                        <input type="number" class="form-control" min="0" id="stock" value="">
+                        <input type="number" class="form-control" min="0" id="stock" v-model="post.stock">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Category</span>
+                        <input type="text" class="form-control" id="category" v-model="post.category">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Price</span>
-                        <input type="number" class="form-control" min="0" id="price" value="">
+                        <input type="number" class="form-control" min="0" id="price" v-model="post.price">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Product Description</span>
-                        <input type="text" class="form-control" id="description" value="">
+                        <input type="text" class="form-control" id="description" v-model="post.description">
                     </div>
                     <p>
                         Choose product picture:
                     </p>
                     <div class="input-group mb-3">
-                        <input type="file" class="form-control" id="add_picture" value="">
+                        <input type="file" class="form-control" id="add_picture">
                     </div>
                     <div class="d-md-flex justify-content-md-end">
-                        <button type="submit" value="submit" class="btn btn-success" @click="alertSuccess">Submit</button>
+                        <button type="submit" value="submit" class="btn btn-success">Submit</button>
                     </div>
                 </form>
             </div>
@@ -38,10 +42,51 @@
 </template>
 
 <script>
+import axios from "axios"
 export default{
+    data(){
+        return{
+            post :{
+                name: "",
+                price: "",
+                stock: "",
+                category: "",
+                description: "",
+                image: "kentang_dieng.png",
+                seller_id: '2'
+            }
+            
+        }
+    },
     methods: {
         alertSuccess(){
             alert("Berhasil ditambahkan")
+        },
+        async postProduct(){
+            const FormData = require('form-data')
+            
+            const formData = new FormData();
+
+            formData.append('name', this.post.name);
+            formData.append('price', this.post.price);
+            formData.append('stock', this.post.stock);
+            formData.append('category', this.post.category);
+            formData.append('description', this.post.description);
+            formData.append('image', this.post.image);
+
+            await axios.post(
+                'http://localhost:8080/goods?seller_id=2',
+                formData
+            ).then(res =>{
+                console.log(res);
+                console.log(this.post)
+                alert("update products success")
+            })
+            .catch(err => {
+                console.log(err);
+                console.log(this.post);
+                alert("update products failed")
+            });
         }
     }
 }
@@ -50,6 +95,7 @@ export default{
 <style scoped>
 div.add_product{
     margin-top: 3rem;
+    margin-bottom: 2rem;
     padding: 1rem;
     width: 60%;
     border-radius: 15px;
