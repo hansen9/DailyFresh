@@ -10,7 +10,7 @@
                         <h4 class="name_product card-title">Card title</h4>
                         <p class="description_product card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 
-                        <div class="main_button gap-2">
+                        <div class="main_button">
                             <button type="button" class="btn btn-outline-info btn-sm" @click="$router.push('/Edit_Product')">
                                 <i class="bi bi-pencil"></i>
                                 Edit

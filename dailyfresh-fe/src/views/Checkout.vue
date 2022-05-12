@@ -35,12 +35,12 @@
 
     <div id="payment_method">
       <h5>Metode Pembayaran</h5>
-      <button class="pay_method">Cash on Delivery</button>
-      <button class="pay_method">Bank Transfer</button>
+      <button>Cash on Delivery</button>
+      <button>Bank Transfer</button>
       <h6>Subtotal : RP64000</h6>
     </div>
 
-    <button id="pesan_btn">PESAN</button>
+    <button class="btn btn-sm btn-outline-secondary">PESAN</button>
   </div>
 </template>
 
@@ -96,20 +96,27 @@ export default {
     margin-bottom: 20px;
     margin-left: 20px;
   }
-  #pesan_btn{
+  #payment_method > h6{
+    padding-right: 20px;
+  }
+  .btn-sm{
     width: 120px;
     height: 60px;
     font-size: 25px;
   }
-  h6,#pesan_btn{
+  h6,.btn-sm{
     margin-top: 10px;
     float:right;
   }
   button{
-    border: none;
-    background-color: #368E12;
-    color: azure;
+    color: #198754;
+    border-color: #198754;
     border-radius: 10px;
+    background-color: aliceblue;
+  }
+  .btn-sm:hover{
+    color: aliceblue;
+    background-color: #198754;
   }
   td{
     border-top: 1px solid black;
@@ -121,7 +128,8 @@ export default {
     width: 25%;
     height: 25%;
   }
-  .pay_method:focus{
-    background-color: aqua;
+  #payment_method > button:focus{
+    background-color: #198754;
+    color: aliceblue;
   }
 </style>
