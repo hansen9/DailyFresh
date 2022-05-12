@@ -55,7 +55,7 @@
       </div>
       <div class="row category-items justify-content-center">
         <div class="col-lg-3 col-5">
-          <router-link to="/Products">
+          <router-link to="/products">
             <div class="category d-flex flex-column justify-content-end align-items-center">
               <img src="../assets/Vegetables_Thumbnail.png" />
               <h2 class="mt-4">Veggies</h2>
@@ -63,7 +63,7 @@
           </router-link>
         </div>
         <div class="col-lg-3 col-5">
-          <router-link to="/Products">
+          <router-link to="/products">
             <div class="category d-flex flex-column justify-content-end align-items-center">
               <img src="../assets/Fruits_Thumbnail.png" />
               <h2 class="mt-4">Fruits</h2>
@@ -71,7 +71,7 @@
           </router-link>
         </div>
         <div class="col-lg-3 col-5">
-          <router-link to="/Products">
+          <router-link to="/products">
             <div class="category d-flex flex-column justify-content-end align-items-center">
               <img src="../assets/Meat_Thumbnail.png" />
               <h2 class="mt-4">Meat</h2>
@@ -79,7 +79,7 @@
           </router-link>
         </div>
         <div class="col-lg-3 col-5">
-          <router-link to="/Products">
+          <router-link to="/products">
             <div class="category d-flex flex-column justify-content-end align-items-center">
               <img src="../assets/Spices_Thumbnail.png" />
               <h2 class="mt-4">Spices</h2>
