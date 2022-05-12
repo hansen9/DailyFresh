@@ -45,7 +45,7 @@ footer div {
 }
 
 div.contact-container {
-  padding: 5vh 0;
+  padding: 2.5vh 0;
   margin-top: 5vh;
   border-bottom: solid 1px rgb(200, 200, 200);
 }
@@ -66,7 +66,8 @@ ul.media li {
 }
 
 div.copyright-container {
-  font-size: 0.8em;
+  font-size: 0.65em;
+  padding: 10px 0;
 }
 
 ul.copyright li {

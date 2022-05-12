@@ -257,6 +257,7 @@ section.list-store {
   background-image: url(../assets/leaves.png);
   text-align: center;
   color: rgb(4, 12, 27);
+  overflow: hidden;
 }
 
 .tomato,
@@ -268,19 +269,19 @@ section.list-store {
 .tomato {
   left: 0;
   bottom: 0;
-  transform: rotate(20deg) translate(-15%, 25%);
-}
-
-.broccoli {
-  right: 0;
-  bottom: 0;
-  transform: translate(30%, 20%);
+  transform: rotate(25deg) translate(0, 25%);
 }
 
 .carrot {
   right: 0;
+  bottom: 0;
+  transform: rotate(-15deg) translate(20%, 25%);
+}
+
+.broccoli {
+  right: 0;
   top: 0;
-  transform: rotate(-25deg) translate(35%, -40%);
+  transform: rotate(-60deg) translate(25%, -5%);
 }
 
 .font-color-green {
@@ -288,6 +289,7 @@ section.list-store {
 }
 
 .list-store a {
+  margin-top: 10px;
   width: 8%;
 }
 
