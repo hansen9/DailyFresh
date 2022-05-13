@@ -32,8 +32,8 @@ const routes = [
     children: [
       {
         path: "/products/:category",
-      name: "Products",
-      component: Products,
+        name: "Products",
+        component: Products,
       }
     ]
   },

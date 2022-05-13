@@ -2,10 +2,19 @@
   <div>
     <!-- <transition-group appear class="grid-wrapper" name="slide-in" tag="div"> -->
       <div id="categoriesNav">
-        <div class="categories"><img src = "@/assets/Vegetables_Thumbnail.png"/> <p id="item">Sayuran</p></div>
-        <div class="categories"><img src = "@/assets/Spices_Thumbnail.png"/> <p id="item">Bumbu Dapur</p></div>
-        <div class="categories"><img src = "@/assets/Meat_Thumbnail.png"/> <p id="item">Daging</p></div>
-        <div class="categories"><img src = "@/assets/Fruits_Thumbnail.png"/> <p id="item">Buah Buahan</p></div>
+        <router-link to="/products/Veggies">
+          <div class="categories"><img src = "@/assets/Vegetables_Thumbnail.png"/> <p id="item">Sayuran</p></div>
+        </router-link>
+        <router-link to="/products/Spices">
+          <div class="categories"><img src = "@/assets/Spices_Thumbnail.png"/> <p id="item">Bumbu Dapur</p></div>
+        </router-link>
+        <router-link to="/products/Meat">
+          <div class="categories"><img src = "@/assets/Meat_Thumbnail.png"/> <p id="item">Daging</p></div>
+        </router-link>
+        <router-link to="/products/Fruits">
+          <div class="categories"><img src = "@/assets/Fruits_Thumbnail.png"/> <p id="item">Buah Buahan</p></div>
+        </router-link>
+        
       </div>
       <div class="album py-5 bg-light">
         <div class="container">
