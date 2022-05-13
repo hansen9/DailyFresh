@@ -22,20 +22,6 @@
                     <h4>List Product</h4>
                 </router-link>
             </div>
-
-            <div class="detail_menu col-2 d-flex flex-column align-items-center justify-content-center">
-                <i class="button_menu bi bi-clock-history"></i>
-                <router-link class="link" to="/History_Seller">
-                    <h4>Sales History</h4>
-                </router-link>
-            </div>
-
-            <div class="detail_menu col-2 d-flex flex-column align-items-center justify-content-center">
-                <i class="button_menu bi bi-send-plus-fill"></i>
-                <router-link class="link" to="/Process_Sales">
-                    <h4>Process Sales</h4>
-                </router-link>
-            </div>
         </div>
     </div>
     <!-- Seller menu end -->
