@@ -23,7 +23,13 @@
                 </div>
               </router-link>
               <div class="separator"></div>
-              <router-link to="/profile">
+              <router-link v-if="length != 0" to="/profile">
+                <div class="profilebutton">
+                  <i class="bi bi-person-circle"></i>
+                  <span class="profile"></span>
+                </div>
+              </router-link>
+              <router-link v-else to="/login">
                 <div class="profilebutton">
                   <i class="bi bi-person-circle"></i>
                   <span class="profile"></span>
@@ -91,6 +97,7 @@ export default {
     return {
       active: false,
       offset: 0,
+      length: localStorage.length,
     };
   },
   methods: {
