@@ -50,12 +50,12 @@
   <!-- Categories -->
   <section class="categories">
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center">
         <h1>Categories</h1>
       </div>
       <div class="row category-items justify-content-center">
         <div class="col-lg-3 col-5">
-          <router-link to="/products/Veggies">
+          <router-link to="/products/veggies">
             <div class="category d-flex flex-column justify-content-end align-items-center">
               <img src="../assets/Vegetables_Thumbnail.png" />
               <h2 class="mt-4">Veggies</h2>
@@ -63,7 +63,7 @@
           </router-link>
         </div>
         <div class="col-lg-3 col-5">
-          <router-link to="/products/Fruits">
+          <router-link to="/products/fruits">
             <div class="category d-flex flex-column justify-content-end align-items-center">
               <img src="../assets/Fruits_Thumbnail.png" />
               <h2 class="mt-4">Fruits</h2>
@@ -71,7 +71,7 @@
           </router-link>
         </div>
         <div class="col-lg-3 col-5">
-          <router-link to="/products/Meat">
+          <router-link to="/products/meat">
             <div class="category d-flex flex-column justify-content-end align-items-center">
               <img src="../assets/Meat_Thumbnail.png" />
               <h2 class="mt-4">Meat</h2>
@@ -79,13 +79,16 @@
           </router-link>
         </div>
         <div class="col-lg-3 col-5">
-          <router-link to="/products/Spices">
+          <router-link to="/products/spices">
             <div class="category d-flex flex-column justify-content-end align-items-center">
               <img src="../assets/Spices_Thumbnail.png" />
               <h2 class="mt-4">Spices</h2>
             </div>
           </router-link>
         </div>
+      </div>
+      <div class="row justify-content-center mt-3">
+        <router-link class="all-products-button" to="/products"><b>All Products</b></router-link>
       </div>
     </div>
   </section>
@@ -99,7 +102,7 @@
     <h1>Are you a <span class="font-color-green">seller?</span></h1>
     <h4>List your own store with <b>Daily Fresh!</b></h4>
     <img class="df-logo" src="../assets/DailyFreshLogo.png" alt="DailyFresh Logo" />
-    <router-link to="/Register_Seller">
+    <router-link to="/register_seller">
       <div class="join-button d-flex justify-content-center align-items-center"><b>Join Now</b></div>
     </router-link>
   </section>
@@ -248,6 +251,21 @@ div.row h1 {
 
 div.category img {
   width: 90%;
+}
+
+a.all-products-button {
+  width: 20vh;
+  color: #198754;
+  background-color: white;
+  border: 1px solid #198754;
+  padding: 2vh 0;
+  border-radius: 10px;
+  transition: all 0.1s ease-in-out;
+}
+
+a.all-products-button:hover {
+  background-color: #198754;
+  color: white;
 }
 
 /* List Store */
