@@ -4,16 +4,25 @@
       <router-link to="/">
         <img src="../assets/DailyFresh2.png" alt="df_logo" class="img-fluid" />
       </router-link>
-      <form class="d-flex flex-column justify-content-between" action="#">
+      <form class="d-flex flex-column justify-content-between" @submit.prevent="registerSubmit">
         <label for="name">Name</label>
-        <input type="text" id="Name" placeholder="Levin Kun" />
+        <input v-model="user.name" type="text" id="Name" placeholder="Levin Kun" />
+
         <label for="email">Email</label>
-        <input type="email" id="email" placeholder="dailyfresh@email.com" />
+        <input v-model="user.email" type="email" id="email" placeholder="dailyfresh@email.com" />
+
+        <label for="name">Address</label>
+        <input v-model="user.address" type="text" id="Name" placeholder="Address" />
+
+        <label for="name">Phone Number</label>
+        <input v-model="user.phone" type="text" id="Name" placeholder="000" />
+
         <label for="password">Password</label>
-        <input type="password" />
+        <input v-model="user.password" type="password" />
         <label for="password">Confirm Password</label>
-        <input type="password" />
-        <button class="align-self-center" type="button">Register</button>
+        <input v-model="user.confirmPassword" type="password" />
+
+        <button class="align-self-center" type="submit">Register</button>
         <p class="have-account">Have an Account? <router-link to="/Login"> Sign In </router-link></p>
       </form>
     </div>
@@ -21,8 +30,50 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: "RegisterPage",
+  data(){
+    return{
+      user:{
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        address: "",
+        phone: "",
+        balance: 0
+      }
+    }
+  },
+  methods:{
+    async registerSubmit(){
+      const FormData = require('form-data')
+      const formData = new FormData();
+
+
+      // if(this.password == this.confirmPassword){
+        formData.append("name", this.user.name);
+        formData.append("email", this.user.email);
+        formData.append("password", this.user.password);
+        formData.append("phone", this.user.phone);
+        formData.append("cust_address", this.user.address);
+        formData.append("balance", this.user.balance);
+  
+        axios
+          .post("http://localhost:8080/customer", formData)
+          .then(res => {
+            console.log(res);
+            location.replace("/login")
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      // }else{
+      //   console.log("Error");
+      // }
+    }
+  }
 };
 </script>
 

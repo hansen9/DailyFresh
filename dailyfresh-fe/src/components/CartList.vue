@@ -16,11 +16,12 @@
       <p>{{ item.price }}</p>
     </div>
     <div class="col col-lg-2">
-      <form>
+      <!-- <form>
         <div class="form-group quantity_cart">
           <input type="number" class="form-control" min="0" :value="item.quantity"/>
         </div>
-      </form>
+      </form> -->
+      <p>{{ item.quantity }}</p>
     </div>
     <div class="col col-lg-2">
       <p>{{ item.price * item.quantity }}</p>
@@ -51,7 +52,7 @@ export default{
       console.log(this.item.goods_id)
       
       axios
-        .delete("http://localhost:8080/cart/detail/remove?cart_id=2", {formData})
+        .delete("http://localhost:8080/cart/detail/remove?cart_id=1", formData)
         .then((res) => {
           console.log(res.status);
         })
