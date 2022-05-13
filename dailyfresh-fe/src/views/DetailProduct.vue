@@ -149,7 +149,7 @@ export default{
             formData.append("goods_id", this.id);
 
             Axios
-                .post("http://localhost:8080/cart/detail/add?cart_id=2", formData)
+                .post("http://localhost:8080/cart/detail/add?cart_id=1", formData)
                 .then((res) => {
                     if(res.status == 200){
                         location.replace("/cart");

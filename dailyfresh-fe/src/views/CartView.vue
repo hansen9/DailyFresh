@@ -35,8 +35,9 @@
     <div class="row checkout_product align-items-center">
       <div class="col col-lg-10">
         <!-- Belum beres menghitung total item di cart -->
-        <h3>Subtotal <span v-for="item in carts.data" :key="item.id"><!-- {{sumPrice(item.price, item.quantity)}}--></span></h3>
-        <p>{{total}}</p>
+        <h3>Subtotal <span>{{sumPrice()}}</span></h3>
+        <!-- <div v-for="item in carts.data" :key="item.id"> -->
+        <!-- </div> -->
       </div>
       <div class="col col-lg-2">
         <button class="btn btn-success btn-lg" @click="$router.push('/Checkout')">Checkout</button>
@@ -59,23 +60,33 @@ export default {
   data() {
     return{
       carts: [],
-      // total: 0
+      total: 0,
     };
   },
+  
   methods: {
     fetchCart(){
       axios
-        .get("http://localhost:8080/cart/detail?id=2")
-        .then((res) =>{
-          this.carts = res.data;
-        })
+          .get("http://localhost:8080/cart/detail?id=1")
+          .then((res) =>{
+            this.carts = res.data;
+          })
+          .catch(err =>{
+            console.log(err)
+          });
     },
+    sumPrice(){
+      for(let i = 0; i < this.carts.length; i++){
+        this.total += this.carts[i].quantity * this.cart[i].price
+      }
+    }
     // sumPrice(price, quantity){
     //   this.total += (price * quantity)
-    // }
+    // },
   },
   mounted(){
     this.fetchCart();
+    this.sumPrice();
   }
 };
 </script>
