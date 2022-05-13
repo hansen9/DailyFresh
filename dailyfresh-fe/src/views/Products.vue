@@ -35,12 +35,21 @@ export default {
   data: () => {
     return{
       goods: [],
+      category: ''
     };
   },
   methods: {
     async fetchData(){
-      const res = await axios.get("http://localhost:8080/goods");
-      this.goods = res.data;
+      this.category = this.$route.params.category;
+      if(this.category == null){
+        console.log(this.category)
+        const res = await axios.get("http://localhost:8080/goods");
+        this.goods = res.data;
+      }else{
+        const res = await axios.get(`http://localhost:8080/goods/category?category=${this.category}`);
+        this.goods = res.data;
+      }
+      
     }
   }
 }
