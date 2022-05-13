@@ -4,7 +4,13 @@
       <h5 @click="changeComponent(1)">Account</h5>
       <h5 @click="changeComponent(2)">My Orders</h5>
       <h5 @click="changeComponent(3)">General</h5>
+      <div v-if="userType == 'seller'">
+        <router-link to="/seller_menu">
+          Seller Menu
+        </router-link>
+      </div>
       <h5 @click="logoutMethod">Logout</h5>
+      
     </div>
 
     <div id="dashboard">
@@ -29,6 +35,9 @@
           <hr />
         </div>
       </div>
+
+      
+      
     </div>
   </div>
 </template>
@@ -47,6 +56,7 @@ export default {
   data() {
     return {
       componentClicked: 1,
+      userType: localStorage.getItem("userType")
     };
   },
   methods: {
@@ -69,6 +79,9 @@ export default {
 </script>
 
 <style scoped>
+a{
+
+}
 #content {
   margin: 20px;
   display: grid;

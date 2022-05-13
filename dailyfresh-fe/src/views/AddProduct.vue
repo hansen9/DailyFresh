@@ -30,7 +30,7 @@
                         Choose product picture:
                     </p>
                     <div class="input-group mb-3">
-                        <input type="file" class="form-control" id="add_picture">
+                        <input type="file" class="form-control" id="add_picture" name="imageFileName">
                     </div>
                     <div class="d-md-flex justify-content-md-end">
                         <button type="submit" value="submit" class="btn btn-success">Submit</button>
@@ -53,6 +53,7 @@ export default{
                 category: "",
                 description: "",
                 image: "",
+                id: localStorage.getItem("user_id")
             }
             
         }
@@ -65,8 +66,8 @@ export default{
             const FormData = require('form-data')
             
             const formData = new FormData();
-
-            this.post.image = event.target.file[0].name
+            var imageName = event.target[5].files[0].name
+            this.post.image = imageName
 
             formData.append('name', this.post.name);
             formData.append('price', this.post.price);
@@ -76,7 +77,7 @@ export default{
             formData.append('image', this.post.image);
 
             await axios.post(
-                `http://localhost:8080/goods?seller_id=${ localStorage.user_id}`,
+                `http://localhost:8080/goods?seller_id=${ this.id }`,
                 formData
             ).then(res =>{
                 console.log(res);

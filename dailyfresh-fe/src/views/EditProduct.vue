@@ -81,7 +81,8 @@ export default{
             const FormData = require('form-data');
 
             const formData = new FormData();
-            this.post.image = event.target.file[0].name
+            var imageName = event.target[5].files[0].name
+            this.post.image = imageName
             formData.append('name', this.post.name)
             formData.append('price', this.post.price)
             formData.append('stock', this.post.stock)
