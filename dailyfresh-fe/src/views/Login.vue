@@ -39,6 +39,7 @@ export default {
           console.log(res);
           localStorage.setItem("userName", res.data.data.name);
           localStorage.setItem("userType", res.data.data.type_person);
+          localStorage.setItem("user_id", res.data.data.id);
           location.replace("/");
         })
         .catch((err) => {

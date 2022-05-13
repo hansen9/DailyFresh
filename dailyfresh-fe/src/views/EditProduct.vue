@@ -60,7 +60,7 @@ export default{
                 stock: "",
                 category: "",
                 description: "",
-                image: 'wortel-800-gr.png',
+                image: '',
             },
         }
     },
@@ -81,7 +81,7 @@ export default{
             const FormData = require('form-data');
 
             const formData = new FormData();
-
+            this.post.image = event.target.file[0].name
             formData.append('name', this.post.name)
             formData.append('price', this.post.price)
             formData.append('stock', this.post.stock)

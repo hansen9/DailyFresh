@@ -52,8 +52,7 @@ export default{
                 stock: "",
                 category: "",
                 description: "",
-                image: "kentang_dieng.png",
-                seller_id: '2'
+                image: "",
             }
             
         }
@@ -67,6 +66,8 @@ export default{
             
             const formData = new FormData();
 
+            this.post.image = event.target.file[0].name
+
             formData.append('name', this.post.name);
             formData.append('price', this.post.price);
             formData.append('stock', this.post.stock);
@@ -75,7 +76,7 @@ export default{
             formData.append('image', this.post.image);
 
             await axios.post(
-                'http://localhost:8080/goods?seller_id=2',
+                `http://localhost:8080/goods?seller_id=${ localStorage.user_id}`,
                 formData
             ).then(res =>{
                 console.log(res);
