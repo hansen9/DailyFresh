@@ -103,7 +103,7 @@ const routes = [
     component: HistorySeller,
   },
   {
-    path: "/srocess_sales",
+    path: "/process_sales",
     name: "ProcessSales",
     component: ProcessSales,
   },
