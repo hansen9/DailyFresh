@@ -1,7 +1,7 @@
 # Daily Fresh - Front End
 
 ## Project setup
-```
+``` 
 npm install
 ```
 
